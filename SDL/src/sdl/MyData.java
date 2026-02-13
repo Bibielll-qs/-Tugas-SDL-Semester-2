@@ -16,6 +16,7 @@ public class MyData {
     public static void main(String[] args) {
         // TODO code application logic here
         System.out.println("INi program");
+        System.out.println("test....");
     }
     
 }
