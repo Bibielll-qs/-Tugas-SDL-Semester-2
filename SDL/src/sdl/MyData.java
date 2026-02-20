@@ -17,6 +17,7 @@ public class MyData {
         // TODO code application logic here
         System.out.println("INi program");
         System.out.println("test....");
+        System.out.println("hei ave");
     }
     
 }
