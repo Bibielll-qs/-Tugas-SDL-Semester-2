@@ -1,17 +1,12 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package com.sdl;
+package com.sdl; 
 
-import static com.sdl.Rekursif.arraySum;
+import static com.sdl.Rekursif.arraySum; 
 
 /**
  * Kelas ini merupakan kelas untuk memodelkan rangkaian data numerik.
  * @author puspa
  */
-public class MyLarik {
+public class MyLarik { 
     // size/panjang larik dengan tipe data int
     private int size; // ukuran larik
     // larik penyimpan data bertipe double
@@ -20,33 +15,33 @@ public class MyLarik {
     /**
      * Konstruktor
      */
-    public MyLarik() {
-    }
+    public MyLarik() { 
+    } 
 
     /**
      * Konstruktor; dengan tugas meng-instance-kan larik data
      * @param size 
      */
-    public MyLarik(int size) {
-        this.size = size;
-        this.data = new double[size];
-    }
+    public MyLarik(int size) { 
+        this.size = size; 
+        this.data = new double[size]; 
+    } 
 
     /**
      * Konstruktor dengan parameter data yang sudah dibuat
      * @param data 
      */
-    public MyLarik(double[] data) {
-        this.data = data;
-        this.size= this.data.length;
-    }
+    public MyLarik(double[] data) { 
+        this.data = data; 
+        this.size= this.data.length; 
+    } 
 
     /**
      * @return the size
      */
-    public int getSize() {
-        return size;
-    }
+    public int getSize() { 
+        return size; 
+    } 
 
     /**
      * @param size the size to set
