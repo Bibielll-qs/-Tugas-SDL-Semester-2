@@ -5,6 +5,8 @@
  */
 package com.sdl;
 
+import static com.sdl.Rekursif.arraySum;
+
 /**
  * Kelas ini merupakan kelas untuk memodelkan rangkaian data numerik.
  * @author puspa
@@ -121,7 +123,14 @@ public class MyLarik {
      * @return 
      */
     public double getLoopSum(int indeks){
-        return 0;
+        int sum = 0;
+        if(indeks == 0){
+            return 1;    
+        }
+        for (int i = 0; i < data.length; i++) {
+                sum += data[i];
+            }
+        return sum;
     }
     
     /**
@@ -130,6 +139,9 @@ public class MyLarik {
      * @return 
      */
     public double getRekursifSum(int indeks){
-        return 0;
+          if (indeks == 0){
+            return data[indeks];
+        }
+        return data[indeks] + getRekursifSum(indeks-1);
     }
 }

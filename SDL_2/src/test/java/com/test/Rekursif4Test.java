@@ -10,10 +10,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
-/**
- *
- * @author puspa
- */
+
 public class Rekursif4Test {
     
     public Rekursif4Test() {
@@ -26,7 +23,7 @@ public class Rekursif4Test {
     @Test
     public void test1(){
         int[] hasil = {1,4,7,10,13};
-        int[] data = Rekursif.getDeretHitung(1, 3, 4);
+        int[] data = Rekursif.getDeretHitung(hasil, 1, 3, 4);
         assertArrayEquals(hasil,data);
     }
     

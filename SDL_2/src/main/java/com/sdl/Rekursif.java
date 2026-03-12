@@ -74,7 +74,13 @@ public class Rekursif {
      * @return
      */
     public static int fibonaci(int suku1, int suku2, int sukuKe_N) {
-        return 0;
+        if (sukuKe_N == 1){
+            return suku1;
+        } 
+        else if (sukuKe_N == 2) {
+            return suku2;
+        }
+        return fibonaci(suku1, suku2, sukuKe_N-2) + fibonaci(suku1, suku2, sukuKe_N-1) ;
     }
 
     /**
@@ -86,7 +92,10 @@ public class Rekursif {
      * @return
      */
     public static int arraySum(int[] data, int i) {
-        return 0;
+        if (i == 1){
+            return data[i - 1];
+        }
+        return data[i - 1] + arraySum(data, i-1);
     }
 
     /**
@@ -100,7 +109,10 @@ public class Rekursif {
      * @return
      */
     public static int deretHitung(int awal, int selisih, int indeks_suku) {
-        return 0;
+        if(indeks_suku == 1) {
+            return awal;
+        }
+        return deretHitung(awal, selisih, indeks_suku-1) + selisih;
     }
 
     /**
@@ -111,7 +123,13 @@ public class Rekursif {
      * @param indeks_suku
      * @return
      */
-    public static int[] getDeretHitung(int awal, int selish, int indeks_suku) {
-        return null;
+    public static int[] getDeretHitung(int data_awal[], int awal, int selisih, int indeks_suku) {
+        if (indeks_suku == 0) {
+            data_awal[0] = awal;
+            return data_awal;
+        } 
+        getDeretHitung(data_awal, awal,selisih,indeks_suku-1);
+        data_awal[indeks_suku] = data_awal[indeks_suku-1] +selisih;
+        return data_awal;
     }
 }
