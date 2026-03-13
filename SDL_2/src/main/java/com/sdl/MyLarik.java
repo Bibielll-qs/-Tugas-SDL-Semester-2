@@ -156,12 +156,21 @@ public class MyLarik {
      * @param x
      * @return 
      */
-    public int sequentialSearch(double[] x) {
+    public int sequentialSearch(double x) {
         for (int i = 0; i < data.length; i++) {
             double d = data[i];
-            if (data[i]  == d)
+            if (x == d)
                 return i;
         }
         return -1;
     }
+
+    public int interpolationSearch(int i) {
+       
+    }
+
+    public int binarySearch(int i) {
+        
+    }
+    
 }

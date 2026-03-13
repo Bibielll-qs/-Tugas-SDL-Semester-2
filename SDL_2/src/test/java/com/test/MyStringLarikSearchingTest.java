@@ -10,7 +10,10 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 import com.sdl.*;
 import java.util.Arrays;
-
+/**
+ *
+ * @author puspa
+ */
 public class MyStringLarikSearchingTest {
     
     public MyStringLarikSearchingTest() {
