@@ -27,8 +27,8 @@ public class Rekursif3Test { //deklarasi kelas Rekursif3Test
     } //akhir dari metode test1
     
     @Test //metode untuk mengetes program pada file 
-    public void test2(){ //membuat metode test()
-        int[] data = new int[5]; //
+    public void test2(){ //membuat metode test2()
+        int[] data = new int[5]; //deklarasi array data dengan ukuran 5
         //mengisi data array
         data[0]=1; 
         data[1]=2; 
@@ -36,28 +36,28 @@ public class Rekursif3Test { //deklarasi kelas Rekursif3Test
         data[3]=4;
         data[4]=5;
         
-        int hasil = Rekursif.arraySum(data,4); //
-        System.out.println("Hasil = "+hasil);
-        assertEquals(10,Rekursif.arraySum(data, 4)); //
+        int hasil = Rekursif.arraySum(data,4); //deklarasi & simpan metode arraySm() data ke 4 pada hasil
+        System.out.println("Hasil = "+hasil); //mencetak hasil
+        assertEquals(10,Rekursif.arraySum(data, 4)); //mengecek hasil perhitungan array data yang ke 4 adalah 10
         
-        int hasil1 = Rekursif.arraySum(data,4);
-        System.out.println("Hasil = "+hasil1);
-        assertEquals(6,Rekursif.arraySum(data, 3));
-    }
+        int hasil1 = Rekursif.arraySum(data,4); //deklarasi & simpan metode arraySm() data ke 4 pada hasil1
+        System.out.println("Hasil = "+hasil1); //mencetak hasil
+        assertEquals(6,Rekursif.arraySum(data, 3)); //mengecek hasil perhitungan array data yang ke 3 adalah 6
+    } //akhir dari metode test2()
     
     @Test //metode untuk mengetes program pada file 
     public void test3(){ //membuat metode test3()
-        int[] data = new int[5]; //
-        //
+        int[] data = new int[5]; //deklarasi array data dengan ukuran 5
+        //memasukkan indeks array data pada metode deretHitung dengan parameter awal, selisih, & indeks_suku
         data[0]=Rekursif.deretHitung(1, 3, 1);
         data[1]=Rekursif.deretHitung(1, 3, 2);
         data[2]=Rekursif.deretHitung(1, 3, 3);
         data[3]=Rekursif.deretHitung(1, 3, 4);
         data[4]=Rekursif.deretHitung(1, 3, 5);
         
-        System.out.println("Hasil = "+data); //
-        int[] hasil = {1,4,7,10,13}; //
+        System.out.println("Hasil = "+data); //mencetak hasil
+        int[] hasil = {1,4,7,10,13}; //deklarasi & simpan data array hasil
         
-        assertArrayEquals(hasil,data); //
+        assertArrayEquals(hasil,data); //mengecek apakah array hasil & array data memiliki isi yang sama
     } //akhir dari metode test3()
 } //akhir dari kelas Rekursif3Test 

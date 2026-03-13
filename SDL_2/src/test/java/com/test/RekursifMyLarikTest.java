@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.test; //menyimpan file ke pckage com.test
 
 import com.sdl.MyLarik; //mengimport isi kelas com.sdl.MyLarik

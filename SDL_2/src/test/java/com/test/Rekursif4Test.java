@@ -23,9 +23,10 @@ public class Rekursif4Test { //deklarasi kelas Rekursif4Test
     
     @Test //metode untuk mengetes program pada file 
     public void test1(){ //membuat metode test()
-        int[] hasil = {1,4,7,10,13}; //
-        int[] data = Rekursif.getDeretHitung(hasil, 1, 3, 4);
-        assertArrayEquals(hasil,data); //
+        int[] hasil = {1,4,7,10,13}; //deklarasi & simpan data array hasil
+        int[] data = Rekursif.getDeretHitung(hasil, 1, 3, 4); 
+        //deklarasi & simpan data array data sama dengan metode getDeretHitung() dengan parameter
+        assertArrayEquals(hasil,data); //mengecek apakah array hasil & array data memiliki isi yang sama
     } //akhir dari metode test1()
     
 } //akhir dari kelas Rekursif4Test
