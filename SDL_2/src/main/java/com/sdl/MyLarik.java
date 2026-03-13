@@ -156,10 +156,10 @@ public class MyLarik {
      * @param x
      * @return 
      */
-    public int sequentialSearch(double x) {
+    public int sequentialSearch(double[] x) {
         for (int i = 0; i < data.length; i++) {
             double d = data[i];
-            if (x == d)
+            if (data[i]  == d)
                 return i;
         }
         return -1;

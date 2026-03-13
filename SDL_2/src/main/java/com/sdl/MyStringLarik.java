@@ -111,4 +111,7 @@ public class MyStringLarik {
         }
         return sum;       
     }
+    public double binarySearch(){
+        
+    }
 }
