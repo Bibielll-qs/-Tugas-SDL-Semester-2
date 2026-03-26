@@ -25,6 +25,7 @@ public class SearchingTest { //deklarasi class SearchingTest
         MyLarik test1 = new MyLarik(data1); //membuat objek test1 pada class Mylarik
         test1.cetakData(); //memnaggil metode cetakData() pada objek test1
     } //akhir dari metode testCetakArray()
+    
     @Test //metode untuk mengetes program pada file 
     public void testSequential(){ //membuat metode testSequential()
         double[] data = {5,4,1,10,21,15,13}; //membuat isi data array data bertipe double

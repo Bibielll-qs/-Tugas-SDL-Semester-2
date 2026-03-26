@@ -7,7 +7,7 @@ public class SearchingMain { //deklarasi kelas SearchingMain
     public static void main(String[] args) { //meteode menjalankan program
         Scanner input = new Scanner(System.in); //membuat objek scanner bernama input
         double [] data = {25, 30, 35, 1, 2, 50}; //deklarasi & mengisi array data
-        Arrays.sort(data); //
+        Arrays.sort(data); //mengurutkan data dalam array dari angka yang paling kecil
         System.out.print("Masukkan data yang dicari: "); //meminta user memasukkan data angka yang dicari indeksnya
         double angka = input.nextDouble(); //baca & simpan data angka
         
