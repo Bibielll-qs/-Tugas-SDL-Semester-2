@@ -169,8 +169,21 @@ public class MyLarik {
        
     }
 
-    public int binarySearch(int i) {
-        
+    public int binarySearch(double x) {
+        int indeksAwal = 0;
+        int indeksAkhir = indeksAwal - 1;
+        double nilaiTengah = (indeksAwal - indeksAkhir)/2;
+        while(indeksAwal <= indeksAkhir){
+            if(data[nilaiTengah] > x){
+                double indeksAkhir = data[nilaiTengah] +1;
+            }
+            else if(data[nilaiTengah] == x){
+                return nilaiTengah;
+            }
+            else{
+                
+            }
+        }
     }
     
 }
