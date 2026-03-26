@@ -1,15 +1,6 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package com.sdl;
+package com.sdl; //menyimpan file ke package com.sdl
 
-/**
- *
- * @author puspa
- */
-public class MyStudentLarik {
+public class MyStudentLarik { //deklarasi class  MyStudentLarik 
     // size/panjang larik dengan tipe data int
     private int size; // ukuran larik
     // larik penyimpan data bertipe Student

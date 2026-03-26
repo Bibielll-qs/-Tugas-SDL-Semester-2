@@ -1,15 +1,10 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.sdl;
 
 import java.util.Arrays;
 
 /**
  * Kelas ini merupakan kelas untuk memodelkan rangkaian data numerik.
- * @author puspa
+ * @author 
  */
 public class MyLarik {
     // size/panjang larik dengan tipe data int
@@ -171,7 +166,8 @@ public class MyLarik {
        int low = 0; //deklarasi & inisialisasi nilai awal variabel low, batas kiri
        int high = data.length -1; //deklarasi & simpan rumus perhitungan ke variabel high, batas kanan
        while(low <= high && x >= data[low] && x <= data[high]){ //kondisi perulangan untuk nilai yang dicari masih ada
-           int mid = (int) (low + (int)((x - data[low]) * (high - low))/(data[high] - data[low])); //deklarasi & simpan rumus perhitungan perkiraan posisi berdasarkan nilai mid
+           int mid = (int) (low + (int)((x - data[low]) * (high - low))/(data[high] - data[low])); 
+           //deklarasi & simpan rumus perhitungan perkiraan posisi berdasarkan nilai mid
            if(data[mid] == x){ //persyaratan jika array data berisi data mid sama dengan nilai x
                return mid; //mengembalikan nilai mid
            } //akhir dari persyaratan
