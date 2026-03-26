@@ -158,49 +158,49 @@ public class MyLarik {
      * @param x
      * @return 
      */
-    public int sequentialSearch(double x) {
-        for (int i = 0; i < data.length; i++) {
-            double d = data[i];
-            if (x == d)
-                return i;
-        }
-        return -1;
-    }
+    public int sequentialSearch(double x) { //membuat metode sequentialSearch(double x) dengan parameter
+        for (int i = 0; i < data.length; i++) { //perulangan untuk data.length
+            double d = data[i]; //deklrasi variabel d untuk menyimpan isi data ke dalam indeks array data 
+            if (x == d) //persyaratan jika nilai x sama dengan nilai d
+                return i; //akan mengembalikan nilai i
+        } //akhir dari perulangan
+        return -1; //mengembalikan nilai -1
+    } //qkhir dari metode sequentialSearch(double x)
 
-    public int interpolationSearch(double x) {
-       int low = 0;
-       int high = data.length -1;
-       while(low <= high && x >= data[low] && x <= data[high]){
-           int mid = (int) (low + (int)((x - data[low]) * (high - low))/(data[high] - data[low]));
-           if(data[mid] == x){
-               return mid;
+    public int interpolationSearch(double x) { //membuat metode interpolationSearch(double x) dengan parameter
+       int low = 0; //deklarasi & inisialisasi nilai awal variabel low, batas kiri
+       int high = data.length -1; //deklarasi & simpan rumus perhitungan ke variabel high, batas kanan
+       while(low <= high && x >= data[low] && x <= data[high]){ //kondisi perulangan untuk nilai yang dicari masih ada
+           int mid = (int) (low + (int)((x - data[low]) * (high - low))/(data[high] - data[low])); //deklarasi & simpan rumus perhitungan perkiraan posisi berdasarkan nilai mid
+           if(data[mid] == x){ //persyaratan jika array data berisi data mid sama dengan nilai x
+               return mid; //mengembalikan nilai mid
+           } //akhir dari persyaratan
+           else if(data[mid] > x){ //persyaratan jika arrat data berisi mid lebih besar dari nilai x
+               high = mid - 1; //eksekusi nilai high adalah perhitungan tersebut
+           } 
+           else{ //persyaratn selain dari atas 
+               low = mid + 1; //eksekusi nilai low adalah perhitungan tersebut
            }
-           else if(data[mid] > x){
-               high = mid - 1;
-           }
-           else{
-               low = mid + 1;
-           }
-       }
-       return -1;
-    }
+       } //akhir perulangan
+       return -1; //mengembalikan nilai -1
+    } //akhir dari metode interpolationSearch(double x)
 
-    public int binarySearch(double x) {
-        int indeksAwal = 0;
-        int indeksAkhir = data.length - 1;
-        while(indeksAwal <= indeksAkhir){
-            int nilaiTengah = (indeksAwal + indeksAkhir)/2;
-            if(data[nilaiTengah] == x){
-                return nilaiTengah;
+    public int binarySearch(double x) { //membuat metode binarySearch(double x) dengan parameter
+        int indeksAwal = 0; //deklarasi & inisialisasi awal variabel indeksAwal, batas kiri
+        int indeksAkhir = data.length - 1;  //deklarasi & simpan rumus perhitungan ke variabel indeksAkhir, batas kanan
+        while(indeksAwal <= indeksAkhir){ //kondisi perulangan untuk nilai yang dicari masih ada
+            int nilaiTengah = (indeksAwal + indeksAkhir)/2; //deklarasi & simpan rumus perhitungan indeks tengah pada variabel nilaiTengah
+            if(data[nilaiTengah] == x){ //persyaratan jika array data berisi nilaiTengah sama dengan nilai x
+                return nilaiTengah; //mengembalikan hasil perhitungan nilaiTengah
             }
-            else if(data[nilaiTengah] > x){
-                indeksAkhir = nilaiTengah - 1;
+            else if(data[nilaiTengah] > x){ //persyaratan jika array data berisi nilaiTengah lebih dari nilai x 
+                indeksAkhir = nilaiTengah - 1; //eksekusi nilai indeksAkhir adalah perhitungan tersebut
             }
-            else{
-                indeksAwal = nilaiTengah + 1;
+            else{ //persyaratan selain dari atas
+                indeksAwal = nilaiTengah + 1; //eksekusi nilia indeksAwal adalah perhitungan tersebut
             }
-        }
-        return -1;
-    }
+        } //akhir dari perulangan
+        return -1; //mengembalikan nilai -1
+    } //akhir dari metode binarySearch(double x)
     
-}
+} //akhir dari class MyLarik

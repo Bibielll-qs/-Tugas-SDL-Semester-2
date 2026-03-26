@@ -1,22 +1,17 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package com.sdl;
+package com.sdl; //menyimpan file ke package com.sdl
 
 /**
  * Kelas ini merupakan kelas untuk memodelkan rangkaian data string.
- * @author puspa
+ * @author Bila
  */
-public class MyStringLarik {
+public class MyStringLarik { //deklarasi class  MyStringLarik
     // size/panjang larik dengan tipe data int
     private int size; // ukuran larik
     // larik penyimpan data bertipe String
     private String[] data; // larik penyimpan data
 
-    public MyStringLarik() {
-    }
+    public MyStringLarik() { //membuat metode constructor default MyStringLarik()
+    } //akhir dari  metode constructor default MyStringLarik()
 
     /**
      * Konstruktor; dengan tugas meng-instance-kan larik data
@@ -119,32 +114,32 @@ public class MyStringLarik {
                 return i;
         }
         return -1;
-    }
+    } //akhir dari metode sequentialSearch(String x)
 
-    public boolean isStringExist(String x) {
-        if(this.sequentialSearch(x)==-1)
-            return false;
-        else
-            return true;
-    }
+    public boolean isStringExist(String x) { //membuat metode isStringExist(String x)
+        if(this.sequentialSearch(x)==-1) //persyaratan jika nilai parameter sama dengan -1
+            return false; //mengembalikan nilai false
+        else //persyaratan selain di atas
+            return true; //mengembalikan nilai true
+    } //akhir dari metode isStringExist(String x)
     
-    public int binarySearch(String x) {
-        int indeksAwal = 0;
-        int indeksAkhir = data.length - 1;
-        while(indeksAwal <= indeksAkhir){
-            int nilaiTengah = (indeksAwal + indeksAkhir)/2;
-            int sama = data[nilaiTengah].compareTo(x);
-            if(sama == 0){
-                return nilaiTengah;
+    public int binarySearch(String x) { //membuat metode binarySearch(double x) dengan parameter
+        int indeksAwal = 0; //deklarasi & inisialisasi awal variabel indeksAwal, batas kiri
+        int indeksAkhir = data.length - 1; //deklarasi & simpan rumus perhitungan ke variabel indeksAkhir, batas kanan
+        while(indeksAwal <= indeksAkhir){ //kondisi perulangan untuk nilai yang dicari masih ada, indeksAwal kurang dari sama dengan indeksAkhir
+            int nilaiTengah = (indeksAwal + indeksAkhir)/2; //deklarasi & simpan rumus perhitungan indeks tengah pada variabel nilaiTengah
+            int sama = data[nilaiTengah].compareTo(x); //deklarasi & membandingkan dua string yakni array data dan x tersebut pada variabel sama 
+            if(sama == 0){ //persyaratan jika nilai sama, sama dengan nilai x
+                return nilaiTengah; //mengembalikan nilaitengah
             }
-            else if(sama > 0){
-                indeksAkhir = nilaiTengah - 1;
+            else if(sama > 0){ //persyaratan jika nilai sama lebih dari 0
+                indeksAkhir = nilaiTengah - 1; //eksekusi nilai indeksAkhir adalah perhitungan tersebut
             }
-            else{
-                indeksAwal = nilaiTengah + 1;
+            else{ //persyaratan selain di atas
+                indeksAwal = nilaiTengah + 1;  //eksekusi nilia indeksAwal adalah perhitungan tersebut
             }
         }
-        return -1;
-    }
+        return -1; //mengembalikan -1
+    } //akhir dari metode binarySearch(String x)
     
-}
+} //akhir dari class MyStringLarik
