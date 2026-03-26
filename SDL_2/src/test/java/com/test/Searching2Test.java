@@ -31,4 +31,5 @@ public class Searching2Test { //deklarasi class Searching2Test
         assertEquals(0,test.binarySearch("adi")); //mengecek apakah "adi" ada di indeks 0 
         assertEquals(-1,test.binarySearch("joni")); //mengecek apakah "joni" di indeks -1/tidak ada dalam array
     } //akhir dari metode testBinary()
+    
 } //akhir dair class Searching2Test

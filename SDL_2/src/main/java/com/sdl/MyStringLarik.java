@@ -1,5 +1,4 @@
 package com.sdl; //menyimpan file ke package com.sdl
-
 /**
  * Kelas ini merupakan kelas untuk memodelkan rangkaian data string.
  * @author Bila

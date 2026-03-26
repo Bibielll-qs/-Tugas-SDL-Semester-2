@@ -68,4 +68,5 @@ public class SearchingTest { //deklarasi class SearchingTest
         assertEquals(0,test.interpolationSearch(1)); //mengecek apakah ada angka 1 pada indeks 0
         assertEquals(-1,test.interpolationSearch(20)); //mengecek apakah ada angka 20 di indeks -1/tidak ada dalam array
     } //akhir dari metode testInterpolation()
+    
 } //akhir dari class SearchingTest 

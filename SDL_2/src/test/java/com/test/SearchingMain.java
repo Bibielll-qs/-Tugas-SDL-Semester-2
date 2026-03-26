@@ -46,4 +46,5 @@ public class SearchingMain { //deklarasi kelas SearchingMain
         } //akhir dari persyaratan
         System.out.println(); //mencetak jeda antar baris
     } //akhir dari metode program
+    
 } //akhir dari class SearchingMain

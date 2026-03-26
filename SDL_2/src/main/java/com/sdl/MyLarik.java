@@ -1,7 +1,6 @@
 package com.sdl;
 
 import java.util.Arrays;
-
 /**
  * Kelas ini merupakan kelas untuk memodelkan rangkaian data numerik.
  * @author 

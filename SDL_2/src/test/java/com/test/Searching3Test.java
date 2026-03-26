@@ -5,6 +5,7 @@ import org.junit.jupiter.api.BeforeEach; //mengimport annotation @BeforeEach dar
 import org.junit.jupiter.api.Test; //mengimport annotation @Test dari JUnit5 untuk menandai metode sebagai unit test
 import static org.junit.jupiter.api.Assertions.*; //mengimport kemampuan dari kelas metode sebagai unit test
 
+
 public class Searching3Test { //deklarasi class Searching3Test 
     
     public Searching3Test() { //membuat metode constructor default Searching3Test()
