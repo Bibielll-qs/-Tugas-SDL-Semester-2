@@ -5,6 +5,8 @@
  */
 package com.sdl;
 
+import java.util.Arrays;
+
 /**
  * Kelas ini merupakan kelas untuk memodelkan rangkaian data numerik.
  * @author puspa
@@ -165,25 +167,40 @@ public class MyLarik {
         return -1;
     }
 
-    public int interpolationSearch(int i) {
-       
+    public int interpolationSearch(double x) {
+       int low = 0;
+       int high = data.length -1;
+       while(low <= high && x >= data[low] && x <= data[high]){
+           int mid = (int) (low + (int)((x - data[low]) * (high - low))/(data[high] - data[low]));
+           if(data[mid] == x){
+               return mid;
+           }
+           else if(data[mid] > x){
+               high = mid - 1;
+           }
+           else{
+               low = mid + 1;
+           }
+       }
+       return -1;
     }
 
     public int binarySearch(double x) {
         int indeksAwal = 0;
-        int indeksAkhir = indeksAwal - 1;
-        double nilaiTengah = (indeksAwal - indeksAkhir)/2;
+        int indeksAkhir = data.length - 1;
         while(indeksAwal <= indeksAkhir){
-            if(data[nilaiTengah] > x){
-                double indeksAkhir = data[nilaiTengah] +1;
-            }
-            else if(data[nilaiTengah] == x){
+            int nilaiTengah = (indeksAwal + indeksAkhir)/2;
+            if(data[nilaiTengah] == x){
                 return nilaiTengah;
             }
+            else if(data[nilaiTengah] > x){
+                indeksAkhir = nilaiTengah - 1;
+            }
             else{
-                
+                indeksAwal = nilaiTengah + 1;
             }
         }
+        return -1;
     }
     
 }

@@ -112,25 +112,39 @@ public class MyStringLarik {
         return sum;       
     }
 
-    public int sequentialSearch(String input) {
-        
+    public int sequentialSearch(String x) {
+         for (int i = 0; i < data.length; i++) {
+            String d = data[i];
+            if (d.equals(x))
+                return i;
+        }
         return -1;
     }
 
-    public boolean isStringExist(String input) {
-        if(this.sequentialSearch(input)==-1)
+    public boolean isStringExist(String x) {
+        if(this.sequentialSearch(x)==-1)
             return false;
         else
             return true;
     }
-    public int binarySearch(String data){
-        int indeksAwal = 0, indeksAkhir = this.data.length;
-        int indeksTengah = indeksAwal + indeksAkhir/2;
-        for (int i = 0; i < this.data.length; i++) {
-            String d = this.data[i];
-            if (this.data[i] == d)
-                return 0;
+    
+    public int binarySearch(String x) {
+        int indeksAwal = 0;
+        int indeksAkhir = data.length - 1;
+        while(indeksAwal <= indeksAkhir){
+            int nilaiTengah = (indeksAwal + indeksAkhir)/2;
+            int sama = data[nilaiTengah].compareTo(x);
+            if(sama == 0){
+                return nilaiTengah;
+            }
+            else if(sama > 0){
+                indeksAkhir = nilaiTengah - 1;
+            }
+            else{
+                indeksAwal = nilaiTengah + 1;
+            }
         }
         return -1;
     }
+    
 }
