@@ -240,20 +240,106 @@ public class MyLarik {
         }
         return -1;
     }
-    public int getChangeData(double[] data){
-        int n = data.length;
-        for (int i = 0; i < n - 1; i++) {
-            for (int j = 0; j < n - 1 - i; j++) {
-                if (data[j] > data[j+1]) {
-                    
-                    
-                }
-                
-            }
-        }
-    }
-    public int getMaxData(double[] data){
-        
+    
+    /**
+     * Fungsi untuk pertukaran data
+     * @param data
+     * @param indeks_a
+     * @param indeks_b
+     * @return 
+     */
+    public static double[] getChangeData(double[] data, int indeks_a, int indeks_b){
+        double temp = data[indeks_a];
+        data[indeks_a] = data[indeks_b];
+        data[indeks_b] = temp;
+        return data;
     }
 
+    /**
+     * Fungsi untuk cari data maksimal denagn return indeks
+     * @param data
+     * @return 
+     */
+    public static int getMaxData(double[] data){
+        double max = data[0];
+        int indeks_max = 0;
+        for (int i = 1; i < data.length; i++) {
+            double d = data[i];
+            if (max < data[i]){
+                max = data[i];
+                indeks_max = i;
+            }
+        }
+        return indeks_max;
+    }
+    /**
+     * Fungsi cari data maksimal
+     * @param data
+     * @param indeks_awal
+     * @param indeks_akhir
+     * @return 
+     */
+    public static int getMaxData(double[] data, int indeks_awal, int indeks_akhir){
+        if (indeks_akhir > data.length )
+            return -1;
+        else{
+            double max = data[indeks_awal];
+            int indeks_max = 0;
+            for (int i = indeks_awal; i <= indeks_akhir; i++) {
+                double d = data[i];
+                if (max < data[i]){
+                    max = data[i];
+                    indeks_max = i;
+                }
+            }
+            return indeks_max;
+        }
+    }
+
+    public void bubbleSort(double[] data, int n) {
+        for (int i = n-1; i < data.length; i--) {
+            for (int j = 0; j < i; j++) {
+                if (data[j] > data[j+1]) {
+                    getChangeData(data, j, j+1);
+                    //double temp = data[j];
+                    //data[j] = data[j+1];
+                    //data[j+1] = temp;
+                }
+            }
+            System.out.print("Iterasi ke-"+i+": ");
+            cetakData();
+        }
+    }
+    
+    public void selectionSort(double[] data, int n){
+        for (int i = 0; i < n-1; i++) {
+            int minIndex = i;
+            for (int j = i+1; j < n; j++) {
+                if (data[j] < data[minIndex]) {
+                    minIndex = j;
+                }
+            }
+            if (minIndex != i) {
+                getChangeData(data, i, minIndex);
+            }
+            System.out.print("iterasi ke"+(i+1)+": ");
+            cetakData();
+            
+        }
+    }
+    
+    public void insertionSort(double[] data, int n) {
+        for (int i = 0; i < n-1; i++) {
+            double temp = data[i];
+            int j = i-1;
+        
+            while(j >= 0 && data[j] > temp){
+                data[j+1] = data[j];
+                j = j-1;
+            }
+            data[j+1] = temp;
+            System.out.print("Iterasi ke-"+(i+1)+": ");
+            cetakData();
+        }
+    }
 }

@@ -79,4 +79,44 @@ public class MyStudentLarik {
     public Student getValue(int indeks){
         return this.data[indeks];
     }
+
+    public void printData(Student[] data) {
+       for (int i = 0; i < data.length; i++) {
+            Student d = data[i];
+            System.out.println(d);
+        }
+    }
+    //Binary Search
+    public int search(String Farid){
+        int low = 0;
+        int high = data.length - 1;
+
+        while (low <= high) {
+            int mid = (low + high) / 2;
+
+            int hasil = data[mid].getName().compareTo(Farid);
+
+            if (hasil == 0) {
+                return mid;
+            } else if (hasil > 0) {
+                high = mid - 1;
+            } else {
+                low = mid + 1;
+            }
+        }
+        return -1;
+    }
+    
+    public void nameSort(Student[] data, int n){
+        for (int i = n-1; i < data.length; i--) {
+            for (int j = 0; j < i; j++) {
+                if (data[j].getName().compareTo(data[j+1].getName()) > 0) {
+                    Student temp = data[j];
+                    data[j] = data[j+1];
+                    data[j+1] = temp;
+                }
+            }
+            System.out.print("Iterasi ke-"+i+": ");
+        }
+    }
 }

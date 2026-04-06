@@ -8,14 +8,14 @@ package com.test.sort;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
-import com.sdl.*;
+import com.sdl.MyLarik;
 /**
  *
  * @author puspa
  */
-public class SortTest2 {
+public class SortTest5 {
     
-    public SortTest2() {
+    public SortTest5() {
     }
     
     @BeforeEach
@@ -25,7 +25,7 @@ public class SortTest2 {
     @Test
     public void testSort(){
         double[] data = {5,4,1,10,21,15,13};
-        int maxIndeks = MyLarik.getMaxData(data);
-        assertEquals(4,maxIndeks);
+        MyLarik test = new MyLarik(data);
+        test.insertionSort(data, data.length);
     }
 }

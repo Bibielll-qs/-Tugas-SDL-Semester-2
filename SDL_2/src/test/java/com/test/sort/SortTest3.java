@@ -5,17 +5,18 @@
  */
 package com.test.sort;
 
+import com.sdl.MyLarik;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
-import com.sdl.*;
+
 /**
  *
  * @author puspa
  */
-public class SortTest2 {
+public class SortTest3 {
     
-    public SortTest2() {
+    public SortTest3() {
     }
     
     @BeforeEach
@@ -25,7 +26,7 @@ public class SortTest2 {
     @Test
     public void testSort(){
         double[] data = {5,4,1,10,21,15,13};
-        int maxIndeks = MyLarik.getMaxData(data);
-        assertEquals(4,maxIndeks);
+        int maxIndeks = MyLarik.getMaxData(data,0,2);
+        assertEquals(0,maxIndeks);
     }
 }

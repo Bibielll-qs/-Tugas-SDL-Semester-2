@@ -143,6 +143,65 @@ public class MyStringLarik {
  public boolean isStringExist(String input) {
     return sequentialSearch(input) != -1;
 }
+
+public void cetakData() {
+        for (int i = 0; i < data.length; i++) {
+            String d = data[i];
+            System.out.println(d);
+        }
+    }
+public static String[] getChangeData(String[] data, int indeks_a, int indeks_b){
+        int temp = indeks_a;
+        indeks_a = indeks_b;
+        indeks_b = temp;
+        return data;
+    }
+public void bubbleSort(String[] data, int n) {
+        for (int i = n-1; i < data.length; i--) {
+            for (int j = 0; j < i; j++) {
+                if (data[j].compareTo(data[j+1]) > 0) {
+                    getChangeData(data, j, j+1);
+                    //String temp = data[j];
+                    //data[j] = data[j+1];
+                    //data[j+1] = temp;
+                }
+            }
+            System.out.print("Iterasi ke-"+i+": ");
+            cetakData();
+        }
+    }
+    
+    public void selectionSort(String[] data, int n){
+        for (int i = 0; i < n-1; i++) {
+            int minIndex = i;
+            for (int j = i+1; j < n; j++) {
+                if (j < minIndex) {
+                    minIndex = j;
+                }
+            }
+            if (minIndex != i) {
+                getChangeData(data, i, minIndex);
+            }
+            System.out.print("iterasi ke"+(i+1)+": ");
+            cetakData();
+            
+        }
+    }
+    
+    public void insertionSort(String[] data, int n) {
+        for (int i = 0; i < n-1; i++) {
+            String temp = data[i];
+            int j = i-1;
+        
+            while(j >= 0 && data[j].compareTo(temp) > 0){
+                data[j+1] = data[j];
+                j = j-1;
+            }
+            data[j+1] = temp;
+            System.out.print("Iterasi ke-"+(i+1)+": ");
+            cetakData();
+        }
+    }
 }
 
   

@@ -3,19 +3,19 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.test.sort;
+package com.test.student;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
-import com.sdl.*;
+import com.sdl.Student;
 /**
  *
  * @author puspa
  */
-public class SortTest2 {
+public class StudentTest2 {
     
-    public SortTest2() {
+    public StudentTest2() {
     }
     
     @BeforeEach
@@ -23,9 +23,8 @@ public class SortTest2 {
     }
     
     @Test
-    public void testSort(){
-        double[] data = {5,4,1,10,21,15,13};
-        int maxIndeks = MyLarik.getMaxData(data);
-        assertEquals(4,maxIndeks);
+    public void testStudent(){
+        Student test = new Student("007","James Bond");
+        System.out.println("Data = "+test);
     }
 }
