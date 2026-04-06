@@ -80,7 +80,7 @@ public class MyStudentLarik {
         return this.data[indeks];
     }
 
-    public void printData(Student[] data) {
+    public void printData() {
        for (int i = 0; i < data.length; i++) {
             Student d = data[i];
             System.out.println(d);
@@ -107,8 +107,8 @@ public class MyStudentLarik {
         return -1;
     }
     
-    public void nameSort(Student[] data, int n){
-        for (int i = n-1; i < data.length; i--) {
+    public void nameSort(){
+        for (int i = data.length-1; i < data.length; i++) {
             for (int j = 0; j < i; j++) {
                 if (data[j].getName().compareTo(data[j+1].getName()) > 0) {
                     Student temp = data[j];
