@@ -139,20 +139,20 @@ public class MyStringLarik {
     return sequentialSearch(input) != -1;
 }
 
-public void cetakData() {
+public void cetakData(String[] data) {
         for (int i = 0; i < data.length; i++) {
             String d = data[i];
             System.out.println(d);
         }
     }
 public static String[] getChangeData(String[] data, int indeks_a, int indeks_b){
-        int temp = indeks_a;
-        indeks_a = indeks_b;
-        indeks_b = temp;
+        String temp = data[indeks_a];
+        data[indeks_a] = data[indeks_b];
+        data[indeks_b] = temp;
         return data;
     }
 public void bubbleSort(String[] data, int n) {
-        for (int i = n-1; i < data.length; i++) {
+        for (int i = n-1; i > 0; i--) {
             for (int j = 0; j < i; j++) {
                 if (data[j].compareTo(data[j+1]) > 0) {
                     getChangeData(data, j, j+1);
@@ -162,7 +162,7 @@ public void bubbleSort(String[] data, int n) {
                 }
             }
             System.out.println("Iterasi ke-"+i+": ");
-            cetakData();
+            cetakData(data);
         }
     }
     
@@ -170,7 +170,7 @@ public void bubbleSort(String[] data, int n) {
         for (int i = 0; i < n-1; i++) {
             int minIndex = i;
             for (int j = i+1; j < n; j++) {
-                if (j < minIndex) {
+                if (data[j].compareTo(data[minIndex]) < 0) {
                     minIndex = j;
                 }
             }
@@ -178,13 +178,13 @@ public void bubbleSort(String[] data, int n) {
                 getChangeData(data, i, minIndex);
             }
             System.out.println("iterasi ke"+(i+1)+": ");
-            cetakData();
+            cetakData(data);
             
         }
     }
     
     public void insertionSort(String[] data, int n) {
-        for (int i = 0; i < n-1; i++) {
+        for (int i = 1; i < n; i++) {
             String temp = data[i];
             int j = i-1;
         
@@ -194,7 +194,7 @@ public void bubbleSort(String[] data, int n) {
             }
             data[j+1] = temp;
             System.out.println("Iterasi ke-"+(i+1)+": ");
-            cetakData();
+            cetakData(data);
         }
     }
 }

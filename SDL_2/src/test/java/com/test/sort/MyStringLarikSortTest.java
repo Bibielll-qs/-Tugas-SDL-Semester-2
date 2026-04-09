@@ -19,15 +19,20 @@ public class MyStringLarikSortTest { //deklarasi class MyStringLarikSortTest
     
     @Test  //metode untuk mengetes program pada file 
     public void testSort(){ //metode testSort()
-        String[] data = {"Noah", "Icha", "Theo", "Geby", "Bila"}; //deklarasi array data & mengisi elemen nya bertipe string
+        String[] data = {"Icha", "Noah", "Theo", "Geby", "Bila"}; //deklarasi array data & mengisi elemen nya bertipe string
         MyStringLarik test = new MyStringLarik(data); //membuat objek test dengan parameter data pada class MyStringLarik
         System.out.println("---Bubble Sort---");
-        test.bubbleSort(data, 1); //memanggil metode sorting bubbleSort untuk mengurutkan data pada objek test  
+        String[] data1 = data.clone(); //untuk mengcopi array data
+        test.bubbleSort(data1, data1.length); //memanggil metode sorting bubbleSort untuk mengurutkan data pada objek test  
         System.out.println();
+        
         System.out.println("---Selection Sort---");
-        test.selectionSort(data, data.length); //memanggil metode sorting selectionSort untuk mengurutkan data pada objek test  
+        String[] data2 = data.clone();
+        test.selectionSort(data2, data2.length); //memanggil metode sorting selectionSort untuk mengurutkan data pada objek test  
         System.out.println();
+        
         System.out.println("---Insertion Sort---");
-        test.insertionSort(data, data.length); //memanggil metode sorting insertionSort untuk mengurutkan data pada objek test  
+        String[] data3 = data.clone();
+        test.insertionSort(data3, data3.length); //memanggil metode sorting insertionSort untuk mengurutkan data pada objek test  
     } //akhir metode testSort()
 } //akhir dari class MyStringLarikSortTest
