@@ -1,13 +1,8 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.sdl;
 
 /**
  * Kelas ini merupakan kelas untuk memodelkan rangkaian data string.
- * @author puspa
+ * 
  */
 
 public class MyStringLarik {
@@ -157,7 +152,7 @@ public static String[] getChangeData(String[] data, int indeks_a, int indeks_b){
         return data;
     }
 public void bubbleSort(String[] data, int n) {
-        for (int i = n-1; i < data.length; i--) {
+        for (int i = n-1; i < data.length; i++) {
             for (int j = 0; j < i; j++) {
                 if (data[j].compareTo(data[j+1]) > 0) {
                     getChangeData(data, j, j+1);
@@ -166,7 +161,7 @@ public void bubbleSort(String[] data, int n) {
                     //data[j+1] = temp;
                 }
             }
-            System.out.print("Iterasi ke-"+i+": ");
+            System.out.println("Iterasi ke-"+i+": ");
             cetakData();
         }
     }
@@ -182,7 +177,7 @@ public void bubbleSort(String[] data, int n) {
             if (minIndex != i) {
                 getChangeData(data, i, minIndex);
             }
-            System.out.print("iterasi ke"+(i+1)+": ");
+            System.out.println("iterasi ke"+(i+1)+": ");
             cetakData();
             
         }
@@ -198,7 +193,7 @@ public void bubbleSort(String[] data, int n) {
                 j = j-1;
             }
             data[j+1] = temp;
-            System.out.print("Iterasi ke-"+(i+1)+": ");
+            System.out.println("Iterasi ke-"+(i+1)+": ");
             cetakData();
         }
     }

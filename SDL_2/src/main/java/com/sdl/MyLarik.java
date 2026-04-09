@@ -1,14 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.sdl;
 
 /**
  * Kelas ini merupakan kelas untuk memodelkan rangkaian data numerik.
  *
- * @author puspa
+ * 
  */
 public class MyLarik {
 
@@ -297,7 +292,7 @@ public class MyLarik {
     }
 
     public void bubbleSort(double[] data, int n) {
-        for (int i = n-1; i < data.length; i--) {
+        for (int i = n-1; i < data.length; i++) {
             for (int j = 0; j < i; j++) {
                 if (data[j] > data[j+1]) {
                     getChangeData(data, j, j+1);
@@ -306,7 +301,7 @@ public class MyLarik {
                     //data[j+1] = temp;
                 }
             }
-            System.out.print("Iterasi ke-"+i+": ");
+            System.out.println("Iterasi ke-"+i+": ");
             cetakData();
         }
     }
@@ -322,7 +317,7 @@ public class MyLarik {
             if (minIndex != i) {
                 getChangeData(data, i, minIndex);
             }
-            System.out.print("iterasi ke"+(i+1)+": ");
+            System.out.println("iterasi ke-"+(i+1)+": ");
             cetakData();
             
         }
@@ -338,7 +333,7 @@ public class MyLarik {
                 j = j-1;
             }
             data[j+1] = temp;
-            System.out.print("Iterasi ke-"+(i+1)+": ");
+            System.out.println("Iterasi ke-"+(i+1)+": ");
             cetakData();
         }
     }
