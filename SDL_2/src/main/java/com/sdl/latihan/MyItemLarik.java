@@ -101,16 +101,18 @@ public class MyItemLarik {
     public void itemSort(int type){
         for (int i = 0; i < data.length-1; i++) {
             int minIndex = i;
-            for (int j = i+1; j < type; j++) {
-                if (data[j]< data[minIndex]) {
-                    minIndex = j;
+            for (int j = i+1; j < data.length; j++) {
+                if(type == 0){
+                    if (data[j].getItem().compareTo(data[minIndex].getItem())< 0) {
+                        minIndex = j;
+                    }
+                }
+                else if (type == 1) {
+                    if (data[j].getNumbers() < data[minIndex].getNumbers()) {
+                        minIndex = j;
+                    }
                 }
             }
-            if (minIndex != i) {
-                getChangeData(data, i, minIndex);
-            }
-            System.out.println("iterasi ke"+(i+1)+": ");
-            cetakData();
         }
     }
     
