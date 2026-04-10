@@ -113,4 +113,12 @@ public class MyItemLarik {
             cetakData();
         }
     }
+    
+    /**
+     * Fungsi untuk menghitung jumlahan dari atribut numbers pada item yang sama
+     * @return 
+     */
+    public MyItemLarik getItemSum(){
+        return null;
+    }
 }
