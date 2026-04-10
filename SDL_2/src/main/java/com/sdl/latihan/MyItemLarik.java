@@ -55,14 +55,16 @@ public class MyItemLarik {
      */
     public void append(MyItem item, int indeks){
         this.data[indeks] = item;
+        
     }
+    
     
     /**
      * Fungsi untuk menghitung ukuran Array/Larik
      * @return 
      */
-    public MyItem[] getDataSize(){
-        return data;
+    public int getDataSize(){
+        return data.length;
     }
     
     /**
@@ -100,20 +102,21 @@ public class MyItemLarik {
      */
     public void itemSort(int type){
         for (int i = 0; i < data.length-1; i++) {
-            int minIndex = i;
-            for (int j = i+1; j < data.length; j++) {
+            
+            for (int j = 0; j < data.length - i - 1; j++) {
                 if(type == 0){
-                    if (data[j].getItem().compareTo(data[minIndex].getItem())< 0) {
-                        minIndex = j;
+                    if (data[j].getItem().compareTo(data[j+1].getItem()) > 0) {
+                        getChangeData(data, j, j+1);
                     }
                 }
                 else if (type == 1) {
-                    if (data[j].getNumbers() < data[minIndex].getNumbers()) {
-                        minIndex = j;
+                    if (data[j].getNumbers() > data[j+1].getNumbers()) {
+                        getChangeData(data, j, j+1);
                     }
                 }
             }
         }
+        
     }
     
     /**
@@ -121,7 +124,30 @@ public class MyItemLarik {
      * @return 
      */
     public MyItemLarik getItemSum(){
-        
-        return null;
+      MyItemLarik array = new MyItemLarik(data.length);
+      int indeks = 0;
+        for (int i = 0; i < data.length; i++) {
+            String merekMie = data[i].getItem();
+            int banyakMie = data[i].getNumbers();
+            boolean tidakAda = false;
+            for (int j = 0; j < indeks; j++) {
+                if (array.getData()[j].getItem().equals(merekMie)) {
+                    array.getData()[j].setNumbers(array.getData()[j].getNumbers()+ banyakMie);
+                    tidakAda  = true;
+                    break;
+                }
+                
+            }
+            if (!tidakAda ) {
+                array.getData()[indeks] = new MyItem(merekMie,banyakMie);
+                indeks++;
+                 
+            }
+        }
+        MyItemLarik arraybaru = new MyItemLarik(indeks);
+        for (int i = 0; i < indeks; i++) {
+            arraybaru.getData()[i] = array.getData()[i];
+        }
+        return arraybaru;
     }
 }
