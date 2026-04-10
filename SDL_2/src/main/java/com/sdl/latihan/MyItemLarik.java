@@ -79,16 +79,16 @@ public class MyItemLarik {
         return -1;
     }
     
-    public void getChangeData(MyItem[] data, int indeks_a, int indeks_b){
-        String temp = data[indeks_a];
-        data[indeks_a] = data[indeks_b];
-        data[indeks_b] = temp;
-        return data;
+    public MyItem[] getChangeData(MyItem[] item, int indeks_a, int indeks_b){
+        MyItem temp = item[indeks_a];
+        item[indeks_a] = item[indeks_b];
+        item[indeks_b] = temp;
+        return item;
     }
     
-    public void cetakData(MyItem[] ) {
+    public void cetakData(MyItem d) {
         for (int i = 0; i < data.length; i++) {
-            String d = data[i];
+            d = data[i];
             System.out.println(d);
         }
     }
@@ -99,7 +99,7 @@ public class MyItemLarik {
      * @param type 
      */
     public void itemSort(int type){
-        for (int i = 0; i < type-1; i++) {
+        for (int i = 0; i < data.length-1; i++) {
             int minIndex = i;
             for (int j = i+1; j < type; j++) {
                 if (data[j]< data[minIndex]) {
