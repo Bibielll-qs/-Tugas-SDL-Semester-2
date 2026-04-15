@@ -50,4 +50,19 @@ public class MyItemMapTest {
         assertEquals(0,mapTest.searching("C"));
         assertEquals(-1,mapTest.searching("D"));
     }
+    public void test3(){
+        MyItem test = new MyItem("A",4);
+        MyItem test1 = new MyItem("B",3);
+        MyItem test2 = new MyItem("C",2);
+        MyItem[] testList = new MyItem[2];
+        testList[2]= test;
+        testList[1]= test1;
+        testList[0]= test2;
+        
+        MyItemMap mapTest = new MyItemMap();
+        mapTest.setData(testList);
+        mapTest.sorting();
+        assertEquals(2,mapTest.searching("C"));
+        assertEquals(0,mapTest.searching("A"));
+    }
 }
