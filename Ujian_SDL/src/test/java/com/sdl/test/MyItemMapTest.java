@@ -40,7 +40,7 @@ public class MyItemMapTest {
         MyItem test = new MyItem("A",4);
         MyItem test1 = new MyItem("B",3);
         MyItem test2 = new MyItem("C",2);
-        MyItem[] testList = new MyItem[2];
+        MyItem[] testList = new MyItem[3];
         testList[2]= test;
         testList[1]= test1;
         testList[0]= test2;
@@ -54,7 +54,7 @@ public class MyItemMapTest {
         MyItem test = new MyItem("A",4);
         MyItem test1 = new MyItem("B",3);
         MyItem test2 = new MyItem("C",2);
-        MyItem[] testList = new MyItem[2];
+        MyItem[] testList = new MyItem[3];
         testList[2]= test;
         testList[1]= test1;
         testList[0]= test2;
@@ -64,5 +64,21 @@ public class MyItemMapTest {
         mapTest.sorting();
         assertEquals(2,mapTest.searching("C"));
         assertEquals(0,mapTest.searching("A"));
+    }
+    
+    public void test4(){
+        MyItem test = new MyItem("A",4);
+        MyItem test1 = new MyItem("B",3);
+        MyItem test2 = new MyItem("C",2);
+        MyItem test3 = new MyItem("C",1);
+        
+        MyItemMap mapTest = new MyItemMap();
+        mapTest.append(test,0);
+        mapTest.append(test1,1);
+        mapTest.append(test2,2);
+        mapTest.append(test3,2);
+        
+        assertEquals(2,mapTest.getData()[2].getNumbers());
+        assertEquals("C",mapTest.getData()[2].getData());
     }
 }
