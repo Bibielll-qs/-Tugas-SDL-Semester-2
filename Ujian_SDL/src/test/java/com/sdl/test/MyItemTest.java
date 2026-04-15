@@ -9,7 +9,7 @@ package com.sdl.test;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
-
+import com.sdl.ujian.*;
 /**
  *
  * @author puspa
@@ -29,7 +29,7 @@ public class MyItemTest {
         test.setData("A");
         test.setNumbers(4);
         assertEquals("A",test.getData());
-        assertEquals(10,test.getNumbers());
+        assertEquals(4,test.getNumbers());
         
         MyItem test1 = new MyItem("B",3);
         assertEquals("B",test1.getData());
