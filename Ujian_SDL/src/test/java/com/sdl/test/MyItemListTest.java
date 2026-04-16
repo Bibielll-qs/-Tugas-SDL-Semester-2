@@ -36,7 +36,7 @@ public class MyItemListTest {
         MyItem[] dataTest = listTest.getData();
         assertEquals("A = 4",dataTest[0]);
     }
-    
+    @Test
     public void test2(){
         MyItem test = new MyItem("A",4);
         MyItem test1 = new MyItem("B",3);
@@ -51,6 +51,8 @@ public class MyItemListTest {
         assertEquals(0,listTest.searching("C"));
         assertEquals(-1,listTest.searching("D"));
     }
+    
+    @Test
     public void test3(){
         MyItem test = new MyItem("A",4);
         MyItem test1 = new MyItem("B",3);
@@ -67,21 +69,22 @@ public class MyItemListTest {
         assertEquals(0,listTest.searching("A"));
     }
     
+    @Test
     public void test4(){
         MyItem test = new MyItem("A",4);
         MyItem test1 = new MyItem("B",3);
         MyItem test2 = new MyItem("C",2);
         MyItem test3 = new MyItem("C",1);
         
-        MyItemList listTest = new MyItemList();
-        MyItem[] dataTest = new MyItem[4];
-        listTest.setData(dataTest);
+        MyItemList listTest = new MyItemList(4);
         listTest.append(test,0);
         listTest.append(test1,1);
         listTest.append(test2,2);
         listTest.append(test3,3);
+        
         MyItem[] dataTest = listTest.getData();
-        assertEquals(1,dataTest.[3].getNumbers());
-        assertEquals("C",dataTest.[3].getData());
+        assertEquals(1,dataTest[3].getNumbers());
+        assertEquals("C",dataTest[3].getData());
     }
+    
 }

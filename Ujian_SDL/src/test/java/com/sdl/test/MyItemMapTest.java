@@ -36,7 +36,7 @@ public class MyItemMapTest {
         MyItem[] dataTest = mapTest.getData();
         assertEquals("A = 4",dataTest[0]);
     }
-    
+    @Test
     public void test2(){
         MyItem test = new MyItem("A",4);
         MyItem test1 = new MyItem("B",3);
@@ -51,6 +51,7 @@ public class MyItemMapTest {
         assertEquals(0,mapTest.searching("C"));
         assertEquals(-1,mapTest.searching("D"));
     }
+    @Test
     public void test3(){
         MyItem test = new MyItem("A",4);
         MyItem test1 = new MyItem("B",3);
@@ -66,7 +67,7 @@ public class MyItemMapTest {
         assertEquals(2,mapTest.searching("C"));
         assertEquals(0,mapTest.searching("A"));
     }
-    
+    @Test
     public void test4(){
         MyItem test = new MyItem("A",4);
         MyItem test1 = new MyItem("B",3);
@@ -74,8 +75,6 @@ public class MyItemMapTest {
         MyItem test3 = new MyItem("C",1);
         
         MyItemList mapTest = new MyItemList();
-        MyItem[] dataTest = new MyItem[3];
-        mapTest.setData(dataTest);
         mapTest.append(test,0);
         mapTest.append(test1,1);
         mapTest.append(test2,2);
@@ -83,5 +82,29 @@ public class MyItemMapTest {
         MyItem[] dataTest = mapTest.getData();
         assertEquals(2,dataTest[2].getNumbers());
         assertEquals("C",dataTest[2].getData());
+    }
+    
+    @Test
+    public void test4(){
+        MyItem test = new MyItem("A",4);
+        MyItem test1 = new MyItem("B",3);
+        MyItem test2 = new MyItem("C",2);
+        MyItem test3 = new MyItem("C",1);
+        
+        MyItemList mapTest = new MyItemList(3);
+        mapTest.append(test,0);
+        mapTest.append(test1,1);
+        mapTest.append(test2,2);
+        assertEquals(3,mapTest.getSize());
+        
+        MyItemList mapTest1 = new MyItemList(2);
+        mapTest1.append(test,0);
+        mapTest1.append(test1,1);
+        mapTest1.append(test2,1);
+        assertEquals(2,mapTest1.getSize());
+        
+        MyItem[] dataTest = mapTest1.getData();
+        assertEquals(2,dataTest[1].getNumbers());
+        assertEquals("C",dataTest[1].getData());
     }
 }
