@@ -1,13 +1,6 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.sdl.latihan;
 
-/**
- *
- * @author user
- */
+
 public class MyItemLarik {
     // larik penyimpan data bertipe Student
     private MyItem[] data;
@@ -74,7 +67,7 @@ public class MyItemLarik {
      */
     public int itemSearch(String item){
         for (int i = 0; i < data.length; i++) {
-            if (data[i].equals(item)) {
+            if (data[i].getItem().equals(item)) {
                 return i;
             }
         }
@@ -101,12 +94,14 @@ public class MyItemLarik {
      * @param type 
      */
     public void itemSort(int type){
-        for (int i = 0; i < data.length-1; i++) {
+        for (int i = 0; i < data.length - 1; i++) {
             
-            for (int j = 0; j < data.length - i - 1; j++) {
+            for (int j = 0; j < data.length  - i - 1; j++) {
                 if(type == 0){
                     if (data[j].getItem().compareTo(data[j+1].getItem()) > 0) {
-                        getChangeData(data, j, j+1);
+                        MyItem temp = data[j];
+                        data[j] = data[j+1];
+                        data[j+1] = temp;
                     }
                 }
                 else if (type == 1) {
@@ -141,7 +136,38 @@ public class MyItemLarik {
             if (!tidakAda ) {
                 array.getData()[indeks] = new MyItem(merekMie,banyakMie);
                 indeks++;
-                 
+            }
+        }
+        MyItemLarik arraybaru = new MyItemLarik(indeks);
+        for (int i = 0; i < indeks; i++) {
+            arraybaru.getData()[i] = array.getData()[i];
+        }
+        return arraybaru;
+    }
+    
+    /**
+     * fungsi untuk menghitung jumlahan dari atribut numbers pada item yang sama (berparameter)
+     * @param item
+     * @return 
+     */
+    public MyItemLarik getItemSum2(MyItem[] item) {
+        MyItemLarik array = new MyItemLarik(data.length);
+         int indeks = 0;
+        for (int i = 0; i < data.length; i++) {
+            String merekMie = data[i].getItem();
+            int banyakMie = data[i].getNumbers();
+            boolean tidakAda = false;
+            for (int j = 0; j < indeks; j++) {
+                if (array.getData()[j].getItem().equals(merekMie)) {
+                    array.getData()[j].setNumbers(array.getData()[j].getNumbers()+ banyakMie);
+                    tidakAda  = true;
+                    break;
+                }
+                
+            }
+            if (!tidakAda ) {
+                array.getData()[indeks] = new MyItem(merekMie,banyakMie);
+                indeks++;
             }
         }
         MyItemLarik arraybaru = new MyItemLarik(indeks);

@@ -1,30 +1,21 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package com.test.latihan;
+package com.test.latihan; //menyimpan file ke package com.test.latihan
 
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
-import com.sdl.latihan.*;
+import org.junit.jupiter.api.BeforeEach; //mengimport annotation @BeforeEach dari JUnit5
+import org.junit.jupiter.api.Test; //mengimport annotation @Test dari JUnit5 untuk menandai metode sebagai unit test
+import static org.junit.jupiter.api.Assertions.*; //mengimport kemampuan dari kelas metode sebagai unit test 
+import com.sdl.latihan.*; //mengimport semua isi dari package com.sdl.latihan
 
-/**
- *
- * @author puspa
- */
-public class MyItemLarikTest {
+public class MyItemLarikTest { //deklarasi class MyItemLarikTest
     
-    public MyItemLarikTest() {
+    public MyItemLarikTest() { //metode constructor default  MyItemLarikTest()
     }
     
-    @BeforeEach
+    @BeforeEach //anotasi dalam JUnit 5, menandai sebuah metode dijalankan sebelum setiap metode pengujian 
     public void setUp() {
     }
     
-    @Test
-    public void test1(){
+    @Test //metode untuk mengetes program pada file 
+    public void test1(){ //metode test1()
         // ini pengujian fungsi append
         // buat larik
         MyItemLarik test = new MyItemLarik(5);
@@ -42,12 +33,12 @@ public class MyItemLarikTest {
         test.append(item5, 4);
         // ambil data
         MyItem[] testLarik = test.getData();
-        assertEquals("Farmasi",testLarik[4].getItem());
-        assertEquals("Teknik Mesin",testLarik[3].getItem());
-    }
+        assertEquals("Farmasi",testLarik[4].getItem()); //mengecek apakah ada "Farmasi" di array indeks 4 
+        assertEquals("Teknik Mesin",testLarik[3].getItem()); //mengecek apakah ada "Teknik Mesin" di array indeks 3
+    } //akhir dari metode test1
     
-    @Test
-    public void test2(){
+    @Test //metode untuk mengetes program pada file 
+    public void test2(){ //metode test2()
         // ini pengujian fungsi ukuran data
         // buat larik
         MyItemLarik test = new MyItemLarik(5);
@@ -64,7 +55,7 @@ public class MyItemLarikTest {
         test.append(item4, 3);
         test.append(item5, 4);
         // ambil data Size
-        assertEquals(5,test.getDataSize());
+        assertEquals(5,test.getDataSize()); //mengecek apakah array objek berisi 5 item
         
         // buat larik
         MyItemLarik test1 = new MyItemLarik(3);
@@ -77,11 +68,11 @@ public class MyItemLarikTest {
         test1.append(item20, 1);
         test1.append(item30, 2);
         // ambil data Size
-        assertEquals(3,test1.getDataSize());
-    }
+        assertEquals(3,test1.getDataSize()); //mengecek apakah array objek berisi 3 item 
+    } //akhir dari metode test2
     
-    @Test
-    public void test3(){
+    @Test //metode untuk mengetes program pada file 
+    public void test3(){ //metode test3()
         // ini pengujian fungsi pencarian/searching
         // buat larik
         MyItemLarik test = new MyItemLarik(5);
@@ -98,7 +89,7 @@ public class MyItemLarikTest {
         test.append(item4, 3);
         test.append(item5, 4);
         // ambil data Size
-        assertEquals(2,test.itemSearch("Informatika"));
+        assertEquals(2,test.itemSearch("Informatika")); //mengecek apakah ada "Informatika" pada array indeks 2 
         
         // buat larik
         MyItemLarik test1 = new MyItemLarik(3);
@@ -111,11 +102,12 @@ public class MyItemLarikTest {
         test1.append(item20, 1);
         test1.append(item30, 2);
         // ambil data Size
-        assertEquals(1,test1.itemSearch("Teknik Elektro"));
-    }
+        assertEquals(1,test1.itemSearch("Teknik Elektro")); 
+        //mengecek apakah ada "Teknik Elektro" di indeks 1 dengan memanggil metode itemSearch pada objek test1
+    } //akhir dari metode test3
     
-    @Test
-    public void test4(){
+    @Test //metode untuk mengetes program pada file 
+    public void test4(){ //metode test4()
         // ini pengujian fungsi sorting
         // buat larik
         MyItemLarik test = new MyItemLarik(5);
@@ -134,7 +126,7 @@ public class MyItemLarikTest {
         // ambil data Size
         test.itemSort(0);
         MyItem[] testLarik = test.getData();
-        assertEquals("Farmasi",testLarik[0].getItem());
+        assertEquals("Farmasi",testLarik[0].getItem()); //mengecek apakah ada "Farmasi" di array indeks 0 setelah diurutkan berdasarkan alfabet
         
         // buat larik
         MyItemLarik test1 = new MyItemLarik(3);
@@ -147,9 +139,9 @@ public class MyItemLarikTest {
         test1.append(item20, 1);
         test1.append(item30, 0);
         // ambil data Size
-        test.itemSort(0);
+        test1.itemSort(1);
         MyItem[] testLarik1 = test1.getData();
-        assertEquals("Informatika",testLarik[2].getItem());
-        
-    }
-}
+        assertEquals("Informatika",testLarik1[2].getItem()); 
+        //mengecek apakah ada "Informatika" di array indeks 2  setelah diurutkan berdasarkan angka
+    } //akhir dari metode test4
+} //akhir dari class MyItemLarikTest

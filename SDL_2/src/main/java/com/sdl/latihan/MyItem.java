@@ -1,13 +1,6 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.sdl.latihan;
 
-/**
- *
- * @author user
- */
+
 public class MyItem {
     private String item; // data item bertipe string. dapat diisi misalnya nama negara, nama prodi, nama sekolah, dll
     private int numbers; // data numbers bertipe int, dapat diisi data jumlah item seperti jumlah penduduk negara, jumlah mahasiswa prodi, dll

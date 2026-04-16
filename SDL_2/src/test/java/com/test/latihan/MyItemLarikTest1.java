@@ -1,30 +1,22 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package com.test.latihan;
+package com.test.latihan; //menyimpan file ke package com.test.latihan
 
-import com.sdl.latihan.MyItem;
-import com.sdl.latihan.MyItemLarik;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
+import com.sdl.latihan.MyItem; //mengimport isi dari class MyItem
+import com.sdl.latihan.MyItemLarik; //mengimport isi dari class MyItemLarik
+import org.junit.jupiter.api.BeforeEach; //mengimport annotation @BeforeEach dari JUnit5
+import org.junit.jupiter.api.Test; //mengimport annotation @Test dari JUnit5 untuk menandai metode sebagai unit test
+import static org.junit.jupiter.api.Assertions.*; //mengimport kemampuan dari kelas metode sebagai unit test 
 
-/**
- *
- * @author puspa
- */
-public class MyItemLarikTest1 {
+
+public class MyItemLarikTest1 { //deklarasi class MyItemLarikTest1 
     
-    public MyItemLarikTest1() {
+    public MyItemLarikTest1() { //metode constructor default MyItemLarikTest1()
     }
     
-    @BeforeEach
+    @BeforeEach //anotasi dalam JUnit 5, menandai sebuah metode dijalankan sebelum setiap metode pengujian 
     public void setUp() {
     }
     
-    @Test
+    @Test //metode untuk mengetes program pada file 
     public void test1(){
         // ini pengujian fungsi append
         // buat larik
@@ -44,8 +36,8 @@ public class MyItemLarikTest1 {
         // buat data jumlahan pada item yang sama
         MyItemLarik testSum = test.getItemSum();
         testSum.itemSort(1);
-        assertEquals("Sarimi",testSum.getData()[0].getItem());
-        assertEquals("Indomie",testSum.getData()[2].getItem());
-        assertEquals(350,testSum.getData()[2].getNumbers());
-    }
-}
+        assertEquals("Sarimi",testSum.getData()[0].getItem()); //mengecek apakah ada "Sarimi" di indeks 0 setelah diurutkan berdasarkan angka
+        assertEquals("Indomie",testSum.getData()[2].getItem()); //mengecek apakah ada "Indomie" di indeks 2 setelah diurutkan berdasarkan angka
+        assertEquals(350,testSum.getData()[2].getNumbers()); //mengecek apakah ada angka 350 di indeks 2 setelah diurutkan berdasarkan angka
+    } //akhir dari metode test1
+} //akhir dari class MyItemLarikTest1
