@@ -73,7 +73,7 @@ public class MyItemMapTest {
         MyItem test2 = new MyItem("C",2);
         MyItem test3 = new MyItem("C",1);
         
-        MyItemMap mapTest = new MyItemMap();
+        MyItemList mapTest = new MyItemList();
         MyItem[] dataTest = new MyItem[3];
         mapTest.setData(dataTest);
         mapTest.append(test,0);
