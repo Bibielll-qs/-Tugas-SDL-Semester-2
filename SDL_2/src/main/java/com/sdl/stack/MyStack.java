@@ -23,7 +23,8 @@ public class MyStack {
      * @return 
      */
     public boolean isEmpty(){
-        return true;
+        return last == null; // mengembalikan hasil last dalam stack null/kosong
+        //return true;
     }
     /**
      * Fungsi push ke stack. setiap push, node last menjadi paling awal
@@ -33,7 +34,7 @@ public class MyStack {
         // cek stack kosong
         if (isEmpty()){
             last=node;
-            this.size=1;
+            //this.size=1;
         } else{
             //stack tidak kosong
             node.setNext(this.last);
@@ -75,12 +76,36 @@ public class MyStack {
     }
     
     /**
-     * Fungsi untuk menghitung total atribut nummbers
+     * Fungsi untuk menghitung total atribut numbers
      * @return 
      */
     public int getTotalNumbers(){
         int total = 0;
+         MyNode result = this.last;
+        //iterasi pada stack
+        while(result != null){
+            total += result.getNumbers();
+            result = result.getNext();
+        }
+     
+        return total;
+    }
+    
+    /**
+     * Fungsi untuk menggabungkan atribut data semua node tanpa pop
+     * @param args 
+     */
+    public String getTotalString(){
+        if (isEmpty()) {
+            return null;
+        }
+        String total = "";
+        MyNode result = this.last;
         
+        while(result != null){
+            total += result.getItem();
+            result = result.getNext();
+        }
         return total;
     }
     
@@ -107,7 +132,32 @@ public class MyStack {
         System.out.println(node5);
         int result = stack.getTotalNumbers();
         System.out.println("Total = "+result);
+        String totalData = stack.getTotalString();
+        System.out.println("Data string = "+totalData);
     }
-
-    
 }
+
+/**
+ * public int getTotalNumbers(){
+    int total = 0;
+
+    MyNode result = this.last;
+ *  while(result != null){
+ *      total += result.getNumbers();
+ *      result = result.getNext();
+ *      }
+ * return total;
+ * }
+ * 
+ * public int getTotalNumbers(){
+        int total = 0;
+         MyNode result = this.last;
+        //iterasi pada stack
+        for (int i = 0; i < this.getSize(); i++) {
+            total += result.getNumbers();
+            result = result.getNext();
+        }
+        
+        return total;
+    }
+ */
