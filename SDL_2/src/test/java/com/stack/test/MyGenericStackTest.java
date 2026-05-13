@@ -26,8 +26,8 @@ public class MyGenericStackTest { //deklarasi class MyGenericStackTest
         // buat node
         MyGenericNode<MyItem> node1 = new MyGenericNode<MyItem>(item1,null);
         // test node
-        //String result = node1.getData().toString();
-        assertEquals("A = 4",node1.getData().toString());
+        String result = node1.getData().toString(); //membuat objek result untuk menaggil method toString()
+        assertEquals("A = 4",node1.getData().toString()); //mengecek apakah ada "A = 4" dalam objek nodeString 
     } //akhir dari method nodeTest()
     
     @Test //metode untuk mengetes program pada file
@@ -62,7 +62,7 @@ public class MyGenericStackTest { //deklarasi class MyGenericStackTest
         MyGenericNode<MyItem> node4 = new MyGenericNode<MyItem>(item4,null);
         
         // buat stack
-        MyGenericStack<MyGenericNode<MyItem>> stack = new MyGenericStack<MyGenericNode<MyItem>>();
+        MyGenericStack<MyItem> stack = new MyGenericStack<MyItem>();
         // tambah node
         stack.push(node1);
         assertEquals(false,stack.isEmpty()); //mengecek apakah data objek stack ada isi datanya, false jika tidak kosong
@@ -83,14 +83,14 @@ public class MyGenericStackTest { //deklarasi class MyGenericStackTest
         MyGenericNode<MyItem> node4 = new MyGenericNode<MyItem>(item4,null);
         
         // buat stack
-        MyGenericStack<MyGenericNode<MyItem>> stack = new MyGenericStack<MyGenericNode<MyItem>>();
+        MyGenericStack<MyItem> stack = new MyGenericStack<MyItem>();
         // tambah/push node
         stack.push(node1);
         assertEquals(false,stack.isEmpty()); //mengecek apakah data objek stack ada isi datanya, false jika tidak kosong
         assertEquals(1,stack.getSize()); // //mengecek apakah data objek stack berisi 1 data
         // pop node
-        MyGenericNode<MyItem> node = stack.pop(); //
-        String nodeString = node.getData().toString(); //
+        MyGenericNode<MyItem> node = stack.pop(); 
+        String nodeString = node.getData().toString(); //membuat objek nodeString berisi method toString()
         assertEquals("A = 4",nodeString); //mengecek apakah ada "A = 4" dalam objek nodeString 
     } //akhir dari method test2
 } //akhir dari class MyGenericStackTest

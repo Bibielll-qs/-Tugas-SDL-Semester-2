@@ -1,22 +1,13 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package com.sdl.stack;
+package com.sdl.stack; //menyimpan file ke package com.sdl.stack
 
-/**
- *
- * @author puspa
- */
-public class MyStack {
+public class MyStack { //deklarasi class MyStack
     private MyNode last; // obyek last berkelas MyNode
     private int size; // atribut menghitung jumlah/isi stack
     /**
-     * Konstruktor
+     * Konstruktor default
      */
-    public MyStack() {
-    }
+    public MyStack() { //method constructor default  MyStack()
+    } //
     
     /**
      * Fungsi memeriksa stack kosong atau tidak
@@ -62,6 +53,7 @@ public class MyStack {
     }
     
     /**
+     * method getter
      * @return the size
      */
     public int getSize() {
@@ -69,6 +61,7 @@ public class MyStack {
     }
 
     /**
+     * method setter
      * @param size the size to set
      */
     public void setSize(int size) {
@@ -108,7 +101,12 @@ public class MyStack {
         }
         return total;
     }
-    
+    /**
+     * method menjalankan program, mencetak data stack
+     * menggunakan method push untuk memasukkan data node pada stack
+     * menggunakan method pop untuk mengeluarkan data node pada stack
+     * @param args 
+     */
     public static void main(String[] args) {
         MyStack stack = new MyStack();
         MyNode node1 = new MyNode(null,"A",4);
@@ -135,7 +133,7 @@ public class MyStack {
         String totalData = stack.getTotalString();
         System.out.println("Data string = "+totalData);
     }
-}
+} //akhir dari class MyStack
 
 /**
  * public int getTotalNumbers(){

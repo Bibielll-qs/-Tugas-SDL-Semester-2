@@ -1,7 +1,8 @@
-package com.sdl.stack;
+package com.sdl.stack; //menyimpan file ke package com.sdl.stack
 
 
-public class MyGenericNode<T> {
+public class MyGenericNode<T> { //deklarasi class MyGenericNode<T>
+    //membuat atribut class MyGenericNode<T>
     private T data;
     private MyGenericNode<T> next;
 
@@ -22,6 +23,7 @@ public class MyGenericNode<T> {
     }
 
     /**
+     * method getter
      * @return the data
      */
     public T getData() {
@@ -29,6 +31,7 @@ public class MyGenericNode<T> {
     }
 
     /**
+     * method setter
      * @param data the data to set
      */
     public void setData(T data) {
@@ -48,4 +51,4 @@ public class MyGenericNode<T> {
     public void setNext(MyGenericNode<T> next) {
         this.next = next;
     }
-}
+} //akhir ddari class MyGenericNode
