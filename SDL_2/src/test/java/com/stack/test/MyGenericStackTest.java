@@ -1,18 +1,13 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package com.stack.test;
+package com.stack.test; //menyimpan file ke package com.stack.test
 
-import com.sdl.latihan.MyItem;
-import com.sdl.stack.MyGenericNode;
-import com.sdl.stack.MyGenericStack;
-import com.sdl.stack.MyNode;
-import com.sdl.stack.MyStack;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
+import com.sdl.latihan.MyItem; //mengimport isi dari package com.sdl.latihan.MyItem
+import com.sdl.stack.MyGenericNode; //mengimport isi dari class MyGenericNode
+import com.sdl.stack.MyGenericStack; //mengimport isi dari class MyGenericStack
+import com.sdl.stack.MyNode; //mengimport isi dari class MyNode
+import com.sdl.stack.MyStack; //mengimport isi adri class MyStack
+import org.junit.jupiter.api.BeforeEach; //mengimport annotation @BeforeEach dari JUnit5
+import org.junit.jupiter.api.Test; //mengimport annotation @Test dari JUnit5 untuk menandai metode sebagai unit test
+import static org.junit.jupiter.api.Assertions.*; //mengimport kemampuan dari kelas metode sebagai unit test
 
 /**
  *
@@ -101,4 +96,4 @@ public class MyGenericStackTest {
 //        String nodeString = node.getData().toString();
 //        assertEquals("A = 4",nodeString);        
 //    }
-}
+} //akhir dari class MyGenericStackTest

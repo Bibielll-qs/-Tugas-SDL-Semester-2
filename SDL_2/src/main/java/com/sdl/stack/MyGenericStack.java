@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.sdl.stack;
+package com.sdl.stack; //menyimpan file ke package com.sdl.stack
 
-import com.sdl.latihan.MyItem;
+import com.sdl.latihan.MyItem; //mengimport isi dari package com.sdl.latihan.MyItem
 
 /**
  *
