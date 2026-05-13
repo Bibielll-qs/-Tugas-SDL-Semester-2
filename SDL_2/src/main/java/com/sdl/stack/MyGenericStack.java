@@ -12,7 +12,7 @@ import com.sdl.latihan.MyItem; //mengimport isi dari package com.sdl.latihan.MyI
  * @author puspa
  */
 public class MyGenericStack<T> {
-    private T last;
+    private MyGenericNode<T> last;
     private int size;
 
     /**
@@ -26,7 +26,7 @@ public class MyGenericStack<T> {
      * @param last
      * @param size 
      */
-    public MyGenericStack(T last, int size) {
+    public MyGenericStack(MyGenericNode<T> last, int size) {
         this.last = last;
         this.size = size;
     }
@@ -34,14 +34,14 @@ public class MyGenericStack<T> {
     /**
      * @return the last
      */
-    public T getLast() {
+    public MyGenericNode<T> getLast() {
         return last;
     }
 
     /**
      * @param last the last to set
      */
-    public void setLast(T last) {
+    public void setLast(MyGenericNode<T> last) {
         this.last = last;
     }
 
@@ -74,31 +74,64 @@ public class MyGenericStack<T> {
      * Fungsi push ke stack. setiap push, node last menjadi paling awal
      * @param node 
      */
-    public void push(T node){
+    public void push(MyGenericNode<T> node){
         // cek stack kosong
         if (isEmpty()){
             last=node;
         } else{
             //stack tidak kosong
-            
+            node.setNext(this.last);
+            this.last = node;
         }
+        this.size ++;
     }
+    
     
     /**
      * Fungsi pop, ambil node dari stack.
      * @return 
      */
-    public T pop(){
+    public MyGenericNode<T> pop(){
         // cek stack kosong
         if (last==null){
             return null;
         } else {
             //stack tidak kosong
-           
-            return null;
+            MyGenericNode result = this.last;
+            this.last = result.getNext();
+            result.setNext(null);
+            this.size --;
+            return result;
         }
     }
-
+    public int getTotalNumbers(){
+        int total = 0;
+        if (isEmpty()) {
+            return 0;
+        }
+        else{
+        MyGenericNode<T> result = this.last;
+        //iterasi pada stack
+        while(result != null){
+            MyItem temp = (MyItem)result.getData();
+            total += temp.getNumbers();
+            result = result.getNext();
+        }
+        return total;
+        }
+    }
+    public String getTotalString(){
+        String total = "";
+        MyGenericNode<T> result = this.last;
+        //iterasi pada stack
+        while(result != null){
+            MyItem temp = (MyItem)result.getData();
+            total += temp.getItem();
+            result = result.getNext();
+        }
+     
+        return total;
+    }
     public static void main(String[] args) {
         // buat item
         MyItem item1 = new MyItem("A",4);
@@ -116,13 +149,18 @@ public class MyGenericStack<T> {
         MyGenericNode<MyItem> node3 = new MyGenericNode<MyItem>(item3,null);
         MyGenericNode<MyItem> node4 = new MyGenericNode<MyItem>(item4,null);
         
-        MyGenericStack<MyGenericNode<MyItem>> stack = new MyGenericStack<MyGenericNode<MyItem>>();
+        MyGenericStack<MyItem> stack = new MyGenericStack<>();
         System.out.println("isEmpty = "+stack.isEmpty());
         
         stack.push(node1);
+        stack.push(node2);
+        stack.push(node3);
+        stack.push(node4);
         System.out.println("isEmpty = "+stack.isEmpty());
         System.out.println(stack.getSize());
-//        MyGenericNode<MyItem> node10 = stack.pop();
-//        System.out.println(node10.getData().toString());
+        MyGenericNode<MyItem> node10 = stack.pop();
+        System.out.println(node10.getData().toString());
+        System.out.println("Jumlah total stack = "+stack.getTotalNumbers());
+        System.out.println("Jumlah total string = "+stack.getTotalString());
     }
 }

@@ -24,8 +24,8 @@ public class MyStackTest { //deklarasi class MyStackTest
         MyNode node3 = new MyNode(null,"C",2);
         MyNode node4 = new MyNode(null,"D",1);
         
-        assertEquals(true,stack.isEmpty()); //mengecek apakah data objek stack benar masih kosong
-        assertEquals(0,stack.getSize()); //mengecek apakah data numbers objek stack masih bernilai 0
+        assertEquals(true,stack.isEmpty()); ///mengecek apakah data objek stack kosong, true jika kosong
+        assertEquals(0,stack.getSize()); //mengecek apakah data objek stack berisi 0 data/tidak ada data
     } //akhir method test
     
     @Test //metode untuk mengetes program pada file
@@ -45,14 +45,14 @@ public class MyStackTest { //deklarasi class MyStackTest
         assertEquals(null,node6); //mengecek apakah data objek stack node6 yang diambil/dikeluarkan bernilai null
         
         // test stack diisi banyak node
-        assertEquals(true,stack.isEmpty()); //mengecek apakah data objek stack benar masih kosong
-        assertEquals(0,stack.getSize()); //mengecek apakah data numbers objek stack masih bernilai 0
+        assertEquals(true,stack.isEmpty()); //mengecek apakah data objek stack kosong, true jika kosong
+        assertEquals(0,stack.getSize()); //mengecek apakah data objek stack berisi 0 data/tidak ada data 
         stack.push(node1); // push stack
         stack.push(node2);
         stack.push(node3);
         stack.push(node4);
-        assertEquals(4,stack.getSize()); //mengecek apakah data objek stack bernilai 4
-        assertEquals(false,stack.isEmpty()); //mengecek apakah data objek stack ada isi datanya, false jika kosong
+        assertEquals(4,stack.getSize()); //mengecek apakah data objek stack isinya 4
+        assertEquals(false,stack.isEmpty()); //mengecek apakah data objek stack ada isi datanya, false jika tidak kosong
         node5 = stack.pop(); // pop stack
         assertEquals("D = 1",node5.toString()); //mengecek apakah data objek stack node5 pada method toString() "D = 1"
         
