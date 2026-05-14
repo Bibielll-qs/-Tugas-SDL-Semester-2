@@ -1,13 +1,12 @@
 package com.sdl.stack; //menyimpan file ke package com.sdl.stack
 
-
-public class MyGenericNode<T> { //deklarasi class MyGenericNode<T>
-    //membuat atribut class MyGenericNode<T>
-    private T data;
-    private MyGenericNode<T> next;
+public class MyGenericNode<T> { //deklarasi class generic MyGenericNode<T>
+    //membuat atribut class generic MyGenericNode<T>
+    private T data; //mmebuat atribut data bertipe T (Type), bisa diisi tipe data apa saja
+    private MyGenericNode<T> next; //membuat atribut next bertipe generic pada class MyGenericNode<T>
 
     /**
-     * Konstruktor
+     * Konstruktor default
      */
     public MyGenericNode() {
     }
@@ -39,6 +38,7 @@ public class MyGenericNode<T> { //deklarasi class MyGenericNode<T>
     }
 
     /**
+     * method getter
      * @return the next
      */
     public MyGenericNode<T> getNext() {
@@ -46,9 +46,10 @@ public class MyGenericNode<T> { //deklarasi class MyGenericNode<T>
     }
 
     /**
+     * method setter
      * @param next the next to set
      */
     public void setNext(MyGenericNode<T> next) {
         this.next = next;
     }
-} //akhir ddari class MyGenericNode
+} //akhir dari class MyGenericNode

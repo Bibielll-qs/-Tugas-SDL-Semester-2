@@ -1,22 +1,13 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.sdl.stack; //menyimpan file ke package com.sdl.stack
 
 import com.sdl.latihan.MyItem; //mengimport isi dari package com.sdl.latihan.MyItem
 
-/**
- *
- * @author puspa
- */
-public class MyGenericStack<T> {
-    private MyGenericNode<T> last;
-    private int size;
+public class MyGenericStack<T> { //deklarasi class generic MyGenericStack
+    private MyGenericNode<T> last; //atribut last pada class generic MyGenericNode
+    private int size; // atribut menghitung jumlah/isi stack
 
     /**
-     * Konstruktor
+     * Konstruktor default
      */
     public MyGenericStack() {
     }
@@ -32,6 +23,7 @@ public class MyGenericStack<T> {
     }
 
     /**
+     * method getter
      * @return the last
      */
     public MyGenericNode<T> getLast() {
@@ -39,6 +31,7 @@ public class MyGenericStack<T> {
     }
 
     /**
+     * method setter
      * @param last the last to set
      */
     public void setLast(MyGenericNode<T> last) {
@@ -46,6 +39,7 @@ public class MyGenericStack<T> {
     }
 
     /**
+     * method getter
      * @return the size
      */
     public int getSize() {
@@ -53,6 +47,7 @@ public class MyGenericStack<T> {
     }
 
     /**
+     * method setter
      * @param size the size to set
      */
     public void setSize(int size) {
@@ -61,6 +56,8 @@ public class MyGenericStack<T> {
     
     /**
      * Fungsi memeriksa stack kosong atau tidak
+     * jika stack kosong, maka true
+     * jika stack tidak kosong, maka false
      * @return 
      */
     public boolean isEmpty(){
@@ -97,13 +94,17 @@ public class MyGenericStack<T> {
             return null;
         } else {
             //stack tidak kosong
-            MyGenericNode result = this.last;
-            this.last = result.getNext();
-            result.setNext(null);
-            this.size --;
-            return result;
+            MyGenericNode result = this.last; //node paling atas disimpan di result
+            this.last = result.getNext(); //data node paling atas disimpan
+            result.setNext(null); //data node paling atas pada result dihilangkan
+            this.size --; //maka ukuran stack berkurang
+            return result; //mengembalikan hasil result setelah pop
         }
     }
+    /**
+     * Fungsi untuk menghitung total atribut numbers
+     * @return 
+     */
     public int getTotalNumbers(){
         int total = 0;
         if (isEmpty()) {
@@ -120,6 +121,11 @@ public class MyGenericStack<T> {
         return total;
         }
     }
+    
+     /**
+     * Fungsi untuk menggabungkan atribut data semua node tanpa pop
+     * @param args 
+     */
     public String getTotalString(){
         String total = "";
         MyGenericNode<T> result = this.last;
@@ -132,11 +138,18 @@ public class MyGenericStack<T> {
      
         return total;
     }
+    
+     /**
+     * method menjalankan program, mencetak data stack
+     * menggunakan method push untuk memasukkan data node pada stack
+     * menggunakan method pop untuk mengeluarkan data node pada stack
+     * @param args 
+     */
     public static void main(String[] args) {
         // buat item
         MyItem item1 = new MyItem("A",4);
         // buat node
-        MyGenericNode<MyItem> node1 = new MyGenericNode<MyItem>(item1,null);
+        MyGenericNode<MyItem> node1 = new MyGenericNode<MyItem>(item1,null); //mmebuat node1 berisi item1
         // test node
         String result = node1.getData().toString();
         System.out.println(result);
@@ -149,7 +162,7 @@ public class MyGenericStack<T> {
         MyGenericNode<MyItem> node3 = new MyGenericNode<MyItem>(item3,null);
         MyGenericNode<MyItem> node4 = new MyGenericNode<MyItem>(item4,null);
         
-        MyGenericStack<MyItem> stack = new MyGenericStack<>();
+        MyGenericStack<MyItem> stack = new MyGenericStack<>(); //membuat stack generic pad MyItem
         System.out.println("isEmpty = "+stack.isEmpty());
         
         stack.push(node1);
@@ -163,4 +176,4 @@ public class MyGenericStack<T> {
         System.out.println("Jumlah total stack = "+stack.getTotalNumbers());
         System.out.println("Jumlah total string = "+stack.getTotalString());
     }
-}
+} //akhir dari class MyGenericStack
