@@ -135,6 +135,8 @@ public class MyStack { //deklarasi class MyStack
     }
 } //akhir dari class MyStack
 
+
+
 /**
  * public int getTotalNumbers(){
     int total = 0;
