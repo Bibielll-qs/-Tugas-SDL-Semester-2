@@ -163,7 +163,7 @@ public class ListTest {
         assertEquals(4,list.getSize());
         
         ListNode first = list.deleteFirst();
-        assertEquals("A = 4",first.getNext().toString());
+        assertEquals("D = 1",first.getData().toString());
     }
     
         @Test
@@ -184,8 +184,8 @@ public class ListTest {
         assertEquals(false,list.isEmpty());
         assertEquals(4,list.getSize());
         
-        ListNode last = list.getLast();
-        assertEquals("D = 1",last.getNext().toString());        
+        ListNode last = list.deleteLast();
+        assertEquals("A = 4",last.getData().toString());        
     }
 
     @Test

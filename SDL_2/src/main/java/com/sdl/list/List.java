@@ -117,13 +117,16 @@ public class List{
         if (!isEmpty()) {
             //isi senarai baru 1
             if (first == last) {
-                return first;
+                ListNode node = first;
+                first = null;
+                last = null;
+                return node;
             }
             else{
                 //isi senarai lebih 1
                 ListNode node = first;
                 first = first.getNext();
-                node.setNext(null);
+                
                 return node;
             }
         }
@@ -141,19 +144,26 @@ public class List{
         if (!isEmpty()) {
             //isi senarai baru 1
             if (last == first) {
-                return last;
+                ListNode node = last;
+                last = null;
+                first = null;
+                return node;
             }
             else{
+                ListNode temp = first;
+                while(temp.getNext() != last){
+                    temp = temp.getNext();
+                }
                 ListNode node = last;
-                first = first.getNext();
-                node.setNext(null);
+                temp.setNext(null);
+                last = temp;
                 return node;
             }
         }
-        else{
+        
             return null;
-        }
     }
+    
     
     /**
      * Fungsi hitung ukuran list

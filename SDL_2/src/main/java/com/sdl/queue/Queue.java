@@ -34,7 +34,7 @@ public class Queue {
      * @param node 
      */
     public void enqueue(ListNode node){
-        
+        antrian.addFirst(node);
     }
     
     /**
@@ -42,8 +42,7 @@ public class Queue {
      * @return 
      */
     public ListNode dequeue(){
-        
-        return null;
+        return antrian.deleteLast();
     }
     
     /**
@@ -51,10 +50,7 @@ public class Queue {
      * @return 
      */
     public boolean isEmpty(){
-         if ((this.antrian == null) && (this.antrian == null))
-            return true;
-        else 
-            return false;
+         return antrian.isEmpty();
     }
     
     /**
@@ -62,13 +58,7 @@ public class Queue {
      * @return 
      */
     public int getSize(){
-        List temp = antrian;
-        int size = 0;
-        while(temp != null){
-            size++;
-            temp = temp;
-        }
-        return size;
+       return antrian.getSize();
     }
     
     /**
@@ -76,7 +66,6 @@ public class Queue {
      * @return 
      */
     public int getSumOfTotalNumbers(){
-        
-        return 0;
+        return antrian.getSumOfTotalNumbers();
     }
 }
