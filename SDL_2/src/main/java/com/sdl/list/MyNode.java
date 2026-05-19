@@ -1,24 +1,19 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package com.sdl.list;
+package com.sdl.list; //menyimpan file ke package com.sdl.list
 
-import com.sdl.latihan.MyItem;
+import com.sdl.latihan.MyItem; //mengimport isi class MyItem
 
 /**
  *
  * @author puspa
  */
-public class MyNode extends MyItem{
+public class MyNode extends MyItem{ //deklarasi subclass MyNode dari superclass MyItem
     private MyNode next; // link ke sesama obyek MyNode
 
     /**
-     * Konstruktor
+     * Konstruktor default
      */
     public MyNode() {
     }
     
     
-}
+} //akhir dari class MyNode

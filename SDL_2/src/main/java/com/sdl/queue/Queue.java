@@ -1,17 +1,13 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-package com.sdl.queue;
+package com.sdl.queue; //menyimpan file ke package com.sdl.queue
 
-import com.sdl.list.List;
-import com.sdl.list.ListNode;
+import com.sdl.list.List; //mengimport isi class List
+import com.sdl.list.ListNode; //mengimport isi class ListNode
 
 /**
  *
  * @author user
  */
-public class Queue {
+public class Queue { //deklarasi class Queue
     private List antrian;
 
     /**

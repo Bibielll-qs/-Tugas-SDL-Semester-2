@@ -1,23 +1,19 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-package com.sdl.list;
+package com.sdl.list; //menyimpan file ke package  com.sdl.list
 
-import com.sdl.latihan.MyItem;
+import com.sdl.latihan.MyItem; //mengimport isi dari class MyItem
 
 /**
  *
  * @author user
  */
-public class ListNode {
-    private MyItem data;
-    private ListNode next;
+public class ListNode { //deklarasi class ListNode
+    private MyItem data; //atribut data bertipe class MyItem untuk item dan numbers
+    private ListNode next; //atribut  next bertipe class ListNode
 
     /**
-     * Konstruktor
+     * Konstruktor default
      */
-    public ListNode() {
+    public ListNode() { 
     }
 
     /**
@@ -42,6 +38,7 @@ public class ListNode {
         this.next=null;
     }
     /**
+     * method getter
      * @return the data
      */
     public MyItem getData() {
@@ -49,6 +46,7 @@ public class ListNode {
     }
 
     /**
+     * method setter
      * @param data the data to set
      */
     public void setData(MyItem data) {
@@ -56,6 +54,7 @@ public class ListNode {
     }
 
     /**
+     * method getter
      * @return the next
      */
     public ListNode getNext() {
@@ -63,10 +62,11 @@ public class ListNode {
     }
 
     /**
+     * method setter
      * @param next the next to set
      */
     public void setNext(ListNode next) {
         this.next = next;
     }
     
-}
+} //akhir dari class ListNode

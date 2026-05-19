@@ -1,18 +1,12 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package com.sdl.list;
-
-
+package com.sdl.list; //menyimpan file ke package com.sdl.list
 
 /**
  *
  * @author puspa
  */
-public class List{
-    private ListNode first; 
+public class List{ //deklarasi class List
+    //membuat atribut class List
+    private ListNode first; //atribut firt
     private ListNode last;
     private String name;
 
@@ -206,4 +200,4 @@ public class List{
         }
         return result;
     }
-}
+} //akhir dari class List
