@@ -38,15 +38,59 @@ public class ListTransaksi {
     }
     
     public void add(TransaksiNode node){
-        
+         if (isEmpty()) {
+            first = node;
+            last = node;
+        }
+        else{
+            node.setNext(first);
+            first = node;
+        }
     }
     public TransaksiNode delete(){
-        return null;
+         //isi senarai baru satu
+        if (!isEmpty()) {
+            //isi senarai baru 1
+            if (first == last) {
+                TransaksiNode node = first;
+                first = null;
+                last = null;
+                return node;
+            }
+            else{
+                //isi senarai lebih 1
+                TransaksiNode node = first;
+                first = first.getNext();
+                
+                return node;
+            }
+        }
+        else{
+            //senarai kosong
+            return null;
+        }
     }
     public boolean isEmpty(){
-        return false;
+        if ((this.first == null) && (this.last == null))
+            return true;
+        else 
+            return false;
     }
     public double getTotalTransaksi(){
-        return 0;
+        double total = 0;
+        TransaksiNode barangTransaksi = first;
+        while(barangTransaksi != null){
+            BarangNode barang = listBarang.getFirst();
+            while(barang != null){
+                if(barang.getData().getKode().equals(barangTransaksi.getData().getKode())){
+                    total += barang.getData().getHargaSatuan() * barangTransaksi.getData().getJumlah();
+                break;
+                }
+                barang = barang.getNext();
+            }
+            barangTransaksi = barangTransaksi.getNext();
+        }
+        
+        return total;
     }
 }
