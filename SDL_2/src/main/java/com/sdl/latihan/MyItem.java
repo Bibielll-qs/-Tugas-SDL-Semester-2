@@ -1,14 +1,10 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-package com.sdl.latihan;
+package com.sdl.latihan; //menyimpan file ke package com.sdl.latihan
 
 /**
  *
  * @author user
  */
-public class MyItem {
+public class MyItem { //deklarasi class MyItem
     private String item; // data item bertipe string. dapat diisi misalnya nama negara, nama prodi, nama sekolah, dll
     private int numbers; // data numbers bertipe int, dapat diisi data jumlah item seperti jumlah penduduk negara, jumlah mahasiswa prodi, dll
 
@@ -29,6 +25,7 @@ public class MyItem {
     }
 
     /**
+     * method getter
      * @return the item
      */
     public String getItem() {
@@ -36,6 +33,7 @@ public class MyItem {
     }
 
     /**
+     * method setter
      * @param item the item to set
      */
     public void setItem(String item) {
@@ -43,6 +41,7 @@ public class MyItem {
     }
 
     /**
+     * method getter
      * @return the numbers
      */
     public int getNumbers() {
@@ -50,12 +49,17 @@ public class MyItem {
     }
 
     /**
+     * method setter
      * @param numbers the numbers to set
      */
     public void setNumbers(int numbers) {
         this.numbers = numbers;
     }
 
+    /**
+     * method String data
+     * @return 
+     */
     @Override
     public String toString() {
         return  item + " = " + numbers;

@@ -6,9 +6,9 @@ package com.sdl.list; //menyimpan file ke package com.sdl.list
  */
 public class List{ //deklarasi class List
     //membuat atribut class List
-    private ListNode first; //atribut firt
-    private ListNode last;
-    private String name;
+    private ListNode first; //atribut firt bertipe ListNode
+    private ListNode last; //atribut last bertipe ListNode
+    private String name; //atribut name bertipe String
 
     /**
      * Konstruktor
@@ -20,6 +20,7 @@ public class List{ //deklarasi class List
    
 
     /**
+     * method getter
      * @return the first
      */
     public ListNode getFirst() {
@@ -27,6 +28,7 @@ public class List{ //deklarasi class List
     }
 
     /**
+     * method setter
      * @param first the first to set
      */
     public void setFirst(ListNode first) {
@@ -34,6 +36,7 @@ public class List{ //deklarasi class List
     }
 
     /**
+     * method getter
      * @return the last
      */
     public ListNode getLast() {
@@ -41,6 +44,7 @@ public class List{ //deklarasi class List
     }
 
     /**
+     * method setter
      * @param last the last to set
      */
     public void setLast(ListNode last) {
@@ -48,6 +52,7 @@ public class List{ //deklarasi class List
     }
 
     /**
+     * method getter
      * @return the name
      */
     public String getName() {
@@ -55,6 +60,7 @@ public class List{ //deklarasi class List
     }
 
     /**
+     * method setter
      * @param name the name to set
      */
     public void setName(String name) {

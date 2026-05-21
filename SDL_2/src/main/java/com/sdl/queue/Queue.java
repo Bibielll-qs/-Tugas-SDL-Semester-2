@@ -10,7 +10,7 @@ import com.sdl.list.ListNode; //mengimport isi class ListNode
 public class Queue { //deklarasi class Queue
     private List antrian;
 
-    /**
+    /*, dengan atribut antrian bertipe list. 
      * Konstruktor
      */
     public Queue() {
@@ -64,4 +64,4 @@ public class Queue { //deklarasi class Queue
     public int getSumOfTotalNumbers(){
         return antrian.getSumOfTotalNumbers();
     }
-}
+} //akhir dari class Queue
