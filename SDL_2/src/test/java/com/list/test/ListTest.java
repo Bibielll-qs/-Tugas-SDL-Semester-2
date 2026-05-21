@@ -1,10 +1,6 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/UnitTests/JUnit5TestClass.java to edit this template
- */
-package com.list.test;
+package com.list.test; //menyimpan file ke package com.list.test
 
-import com.sdl.list.*;
+import com.sdl.list.*; //mengimport isi dari package com.sdl.list
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
@@ -13,8 +9,11 @@ import static org.junit.jupiter.api.Assertions.*;
  *
  * @author user
  */
-public class ListTest {
+public class ListTest { //deklarasi class Listtest
     
+    /**
+     * constructor default
+     */
     public ListTest() {
     }
     
@@ -206,4 +205,4 @@ public class ListTest {
         assertEquals(10,list.getSumOfTotalNumbers());        
     }
     
-}
+} //akhir dari class ListTest

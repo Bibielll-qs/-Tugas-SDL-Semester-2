@@ -1,29 +1,28 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/UnitTests/JUnit5TestClass.java to edit this template
- */
-package com.list.test;
+package com.list.test; //menyimpan file ke package com.list.test
 
-import com.sdl.list.ListNode;
-import com.sdl.queue.Queue;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
+import com.sdl.list.ListNode; //mengimport isi dari package com.sdl.list.ListNode
+import com.sdl.queue.Queue; //mengimport isi dari package com.sdl.queue.Queue
+import org.junit.jupiter.api.BeforeEach; //mengimport annotation @BeforeEach dari JUnit5
+import org.junit.jupiter.api.Test; //mengimport annotation @Test dari JUnit5 untuk menandai metode sebagai unit test
+import static org.junit.jupiter.api.Assertions.*; //mengimport kemampuan dari kelas metode sebagai unit test
 
 /**
  *
  * @author user
  */
-public class QueueTest {
+public class QueueTest { //deklarasi class QueueTest
     
+    /**
+     * constructor default
+     */
     public QueueTest() {
     }
     
-    @BeforeEach
+    @BeforeEach //anotasi dalam JUnit5, menandai sebuah metode dijalankan sebelum setiap metode pengujian
     public void setUp() {
     }
     
-    @Test
+    @Test //metode untuk mengetes program pada file
     public void test1(){
         ListNode node1 = new ListNode("A",4);
         ListNode node2 = new ListNode("B",3);
@@ -37,7 +36,7 @@ public class QueueTest {
         assertEquals(1,queue.getSize());
     }
     
-    @Test
+    @Test //metode untuk mengetes program pada file
     public void test2(){
         ListNode node1 = new ListNode("A",4);
         ListNode node2 = new ListNode("B",3);
@@ -57,7 +56,7 @@ public class QueueTest {
         
     }
 
-    @Test
+    @Test //metode untuk mengetes program pada file
     public void test3(){
         ListNode node1 = new ListNode("A",4);
         ListNode node2 = new ListNode("B",3);
@@ -79,7 +78,7 @@ public class QueueTest {
         assertEquals("A = 4",node10.getData().toString());
     }
 
-    @Test
+    @Test //metode untuk mengetes program pada file
     public void test4(){
         ListNode node1 = new ListNode("A",4);
         ListNode node2 = new ListNode("B",3);
@@ -103,4 +102,4 @@ public class QueueTest {
         assertEquals(6,queue.getSumOfTotalNumbers());
     }
 
-}
+} //akhir dari class QueueTest

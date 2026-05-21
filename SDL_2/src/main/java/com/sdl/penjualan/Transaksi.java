@@ -12,6 +12,11 @@ public class Transaksi {
     private String kode;
     private int jumlah;
 
+    public Transaksi(String kode, int jumlah) {
+        this.kode = kode;
+        this.jumlah = jumlah;
+    }
+    
     public String getKode() {
         return kode;
     }

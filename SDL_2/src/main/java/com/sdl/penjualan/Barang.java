@@ -17,6 +17,13 @@ public class Barang {
         return kode;
     }
 
+    public Barang(String kode, String nama, int hargaSatuan) {
+        this.kode = kode;
+        this.nama = nama;
+        this.hargaSatuan = hargaSatuan;
+    }
+    
+
     public void setKode(String kode) {
         this.kode = kode;
     }

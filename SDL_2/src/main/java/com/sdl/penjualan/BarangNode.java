@@ -12,6 +12,12 @@ public class BarangNode {
     private Barang data;
     private BarangNode next;
 
+    public BarangNode(Barang data, BarangNode next) {
+        this.data = data;
+        this.next = next;
+    }
+    
+
     public Barang getData() {
         return data;
     }

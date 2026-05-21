@@ -13,6 +13,11 @@ public class ListTransaksi {
     private TransaksiNode last;
     private ListBarang listBarang;
 
+    public ListTransaksi() {
+        this.listBarang = new ListBarang();
+    }
+
+    
     public TransaksiNode getFirst() {
         return first;
     }
@@ -76,6 +81,7 @@ public class ListTransaksi {
         else 
             return false;
     }
+    
     public double getTotalTransaksi(){
         double total = 0;
         TransaksiNode barangTransaksi = first;
@@ -93,4 +99,34 @@ public class ListTransaksi {
         
         return total;
     }
+    
+    public ListTransaksi getSumOfNumbersOfDistinctData() {
+        ListTransaksi hasil = new ListTransaksi();
+        hasil.setListBarang(listBarang);
+        TransaksiNode bantu = first;
+        
+        while(bantu != null) {
+            String kode = bantu.getData().getKode();
+            int jumlah = bantu.getData().getJumlah();
+            TransaksiNode cari = hasil.getFirst();
+            boolean ketemu = false;
+            
+            while(cari != null) {
+                if (cari.getData().getKode().equals(kode)) {
+                    cari.getData().setJumlah(cari.getData().getJumlah() + jumlah);
+                    ketemu = true;
+                    break;
+                }
+                cari = cari.getNext();
+            }
+            if (!ketemu) {
+                Transaksi TransaksiBaru = new Transaksi(kode, jumlah);
+                TransaksiNode NodeBaru = new TransaksiNode(TransaksiBaru, null);
+                hasil.add(NodeBaru);
+            }
+            bantu = bantu.getNext();
+        }
+        return hasil;
+    }
+  
 }

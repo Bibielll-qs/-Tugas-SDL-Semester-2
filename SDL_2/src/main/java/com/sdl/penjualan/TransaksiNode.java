@@ -9,8 +9,13 @@ package com.sdl.penjualan;
  * @author LENOVO
  */
 public class TransaksiNode {
- private Transaksi data;
+    private Transaksi data;
     private TransaksiNode next;
+
+    public TransaksiNode(Transaksi data, TransaksiNode next) {
+        this.data = data;
+        this.next = next;
+    }
 
     public Transaksi getData() {
         return data;
