@@ -1,34 +1,43 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-package com.sdl.penjualan;
+package com.sdl.penjualan; //menyimpan file ke package com.sdl.penjualan
 
 /**
  *
  * @author LENOVO
  */
-public class ListBarang {
-    private BarangNode first;
-    private BarangNode last;
-
+public class ListBarang { //deklarasi class ListBarang
+    //buat atribut
+    private BarangNode first; //atribut first bertipe BarangNode
+    private BarangNode last; //atribut last bertipe BarangNode
+    /**
+     * method getter
+     * @return 
+     */
     public BarangNode getFirst() {
         return first;
     }
-
+    /**
+     * method setter
+     * @param first 
+     */
     public void setFirst(BarangNode first) {
         this.first = first;
     }
-
+    /**
+     * method getter
+     * @return 
+     */
     public BarangNode getLast() {
         return last;
     }
-
+    /**
+     * method setter
+     * @param last 
+     */
     public void setLast(BarangNode last) {
         this.last = last;
     }
     /**
-     * 
+     * fungsi memasukkan/menambah node ke dalam list di awal
      * @param node 
      */
     public void add(BarangNode node){
@@ -42,20 +51,20 @@ public class ListBarang {
         }
     }
     /**
-     * 
+     * fungsi menghapus node dalam list awal
      * @return 
      */
     public BarangNode delete(){
          //isi senarai baru satu
-        if (!isEmpty()) {
+        if (!isEmpty()) { //jika list tidak kosong
             //isi senarai baru 1
-            if (first == last) {
-                BarangNode node = first;
-                first = null;
-                last = null;
+            if (first == last) { //jika first sama dengan last
+                BarangNode node = first; //node menjadi first
+                first = null; //saat first bernilai null
+                last = null; //saat last bernilai null
                 return node;
             }
-            else{
+            else{ //selain di atas
                 //isi senarai lebih 1
                 BarangNode node = first;
                 first = first.getNext();
@@ -63,13 +72,13 @@ public class ListBarang {
                 return node;
             }
         }
-        else{
+        else{ //selain di atas
             //senarai kosong
             return null;
         }
     }
     /**
-     * 
+     * fungsi cek list kosong
      * @return 
      */
     public boolean isEmpty(){
@@ -78,4 +87,4 @@ public class ListBarang {
         else 
             return false;
     }
-}
+} //akhir dari class ListBarang

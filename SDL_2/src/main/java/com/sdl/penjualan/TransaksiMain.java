@@ -1,12 +1,12 @@
-package com.sdl.penjualan;
+package com.sdl.penjualan; //menyimpan file ke package com.sdl.penjualan
 
 /**
  *
  * @author LENOVO
  */
-public class TransaksiMain {
-    public static void main(String[] args) {
-        ListTransaksi listTransaksi = new ListTransaksi();
+public class TransaksiMain { //deklarasi class TransaksiMain
+    public static void main(String[] args) { //method menjalankan program
+        ListTransaksi listTransaksi = new ListTransaksi(); //buat objek listTransaksi di class ListTransaksi
         
         Barang brg1 = new Barang("1", "Aqua 500 ml", 3000);
         BarangNode br1 = new BarangNode(brg1, null);
@@ -43,15 +43,15 @@ public class TransaksiMain {
      ListTransaksi hasil = listTransaksi.getSumOfNumbersOfDistinctData();
      
      //cetak tabel transaksi barang
-        System.out.println("============== Tabel Transaksi Barang ==============");
+        System.out.println("\n============== Tabel Transaksi Barang ==============\n");
         System.out.printf("%-12s %-20s %-18s %-10s %s%n",
             "Kode Barang", "Nama Barang", "Harga Satuan", "Jumlah", "Subtotal");
-        System.out.println("-----------------------------------------------------------------------");
+        System.out.println("-------------------------------------------------------------------------");
         
-        TransaksiNode transaksi = hasil.getFirst();//ambul node pertama dalam list yang sudah di update
-        while (transaksi != null) {//loop utama transaksi
+        TransaksiNode transaksi = hasil.getFirst();//ambil node pertama dalam list yang sudah di update
+        while (transaksi != null) {//perulangan utama transaksi
             BarangNode barang = listTransaksi.getListBarang().getFirst();//cari dari node pertama barang
-            while (barang != null) {//inner loop (cari semua node barang)
+            while (barang != null) {//perulangan dalam (cari semua node barang)
                 if (barang.getData().getKode().equals(transaksi.getData().getKode())) {//cek apakah kode barang = kode transaksi
                     int subtotal = barang.getData().getHargaSatuan() * transaksi.getData().getJumlah();//hitung subtotal
                     System.out.printf("%-12s %-20s %-18d %-10d %d%n",//cetak data transaksi
@@ -60,16 +60,16 @@ public class TransaksiMain {
                         barang.getData().getHargaSatuan(),
                         transaksi.getData().getJumlah(),
                         subtotal);
-                    break;//keluar dr loop
-                }//tutup kruung kurawal if
+                    break;//keluar 
+                }//akhir dari persyaratan
                 barang = barang.getNext();//kalau tdk cocok, pindah node selanjutnya
-            }//tutup kurung kurawal inner loop
+            }//akhir dari perulangan dalam
             transaksi = transaksi.getNext();//setelah satu transaksi selesai, pindah selanjutnya
-        }//tutup kurung kurawal outer loop
+        }//akhir dari perulangan luar
         
         //cetak total transaksi
-        System.out.println("-----------------------------------------------------------------------");
-        System.out.println("Total Transaksi: " + listTransaksi.getTotalTransaksi());
+        System.out.println("-------------------------------------------------------------------------");
+        System.out.println("Total Transaksi: Rp." + listTransaksi.getTotalTransaksi());
         System.out.println();
     }
-}
+} //akhir dari class TransaksiMain
