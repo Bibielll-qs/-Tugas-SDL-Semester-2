@@ -1,47 +1,67 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-package com.sdl.penjualan;
+package com.sdl.penjualan; //menyimpan file ke package com.sdl.penjualan
 
 /**
  *
  * @author LENOVO
  */
-public class ListTransaksi {
+public class ListTransaksi { //deklarasi class ListTransaksi
+    //atribut
     private TransaksiNode first;
     private TransaksiNode last;
     private ListBarang listBarang;
-
-    public ListTransaksi() {
+    /**
+     * method constructor
+     */
+    public ListTransaksi() { 
         this.listBarang = new ListBarang();
     }
 
-    
+    /**
+     * method getter
+     * @return 
+     */
     public TransaksiNode getFirst() {
         return first;
     }
-
+    /**
+     * method setter
+     * @param first 
+     */
     public void setFirst(TransaksiNode first) {
         this.first = first;
     }
-
+    /**
+     * method getter
+     * @return 
+     */
     public TransaksiNode getLast() {
         return last;
     }
-
+    /**
+     * method setter
+     * @param last 
+     */
     public void setLast(TransaksiNode last) {
         this.last = last;
     }
-
+    /**
+     * method getter
+     * @return 
+     */
     public ListBarang getListBarang() {
         return listBarang;
     }
-
+    /**
+     * method setter
+     * @param listBarang 
+     */
     public void setListBarang(ListBarang listBarang) {
         this.listBarang = listBarang;
     }
-    
+    /**
+     * fungsi memasukkan node 
+     * @param node 
+     */
     public void add(TransaksiNode node){
          if (isEmpty()) {
             first = node;
@@ -52,6 +72,10 @@ public class ListTransaksi {
             first = node;
         }
     }
+    /**
+     * fungsi menghapus node dalam list
+     * @return 
+     */
     public TransaksiNode delete(){
          //isi senarai baru satu
         if (!isEmpty()) {
@@ -75,13 +99,21 @@ public class ListTransaksi {
             return null;
         }
     }
+    /**
+     * fungsi cek isi kosong
+     * @return 
+     */
     public boolean isEmpty(){
         if ((this.first == null) && (this.last == null))
             return true;
         else 
             return false;
     }
-    
+    /**
+     * fungsi hitung jumlah total transaksi
+     * hargaSatuan * jumlah barang
+     * @return 
+     */
     public double getTotalTransaksi(){
         double total = 0;
         TransaksiNode barangTransaksi = first;
@@ -96,10 +128,14 @@ public class ListTransaksi {
             }
             barangTransaksi = barangTransaksi.getNext();
         }
-        
         return total;
     }
-    
+    /**
+     * Mengelompokkan data transaksi berdasarkan kode barang
+     * menjumlahkan total jumlah (jumlah) dari setiap kode yang sama.
+     * jumlah disimpan ListTransaksi baru yang hanya berisi data unik berdasarkan kode
+     * @return 
+     */
     public ListTransaksi getSumOfNumbersOfDistinctData() {
         ListTransaksi hasil = new ListTransaksi();
         hasil.setListBarang(listBarang);

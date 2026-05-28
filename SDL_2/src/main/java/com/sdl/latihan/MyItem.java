@@ -63,6 +63,5 @@ public class MyItem { //deklarasi class MyItem
     @Override
     public String toString() {
         return  item + " = " + numbers;
-    }
-    
+    }   
 }

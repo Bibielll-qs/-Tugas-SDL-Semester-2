@@ -1,9 +1,6 @@
 package com.sdl.penjualan; //menyimpan file ke package com.sdl.penjualan
 
-/**
- *
- * @author LENOVO
- */
+
 public class Transaksi { //deklarasi class Transaksi
     //buat atribut
     private String kode;

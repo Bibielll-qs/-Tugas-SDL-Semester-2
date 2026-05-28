@@ -62,4 +62,5 @@ public class Barang { //deklarasi class Barang
     public void setHargaSatuan(int hargaSatuan) {
         this.hargaSatuan = hargaSatuan;
     }
+   
 } //akhir dari clas Barang

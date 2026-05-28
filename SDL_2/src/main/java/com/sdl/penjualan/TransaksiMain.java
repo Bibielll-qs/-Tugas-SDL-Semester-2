@@ -7,7 +7,7 @@ package com.sdl.penjualan; //menyimpan file ke package com.sdl.penjualan
 public class TransaksiMain { //deklarasi class TransaksiMain
     public static void main(String[] args) { //method menjalankan program
         ListTransaksi listTransaksi = new ListTransaksi(); //buat objek listTransaksi di class ListTransaksi
-        
+        //membuat listTransaksi yang sama dengan Barang datanya
         Barang brg1 = new Barang("1", "Aqua 500 ml", 3000);
         BarangNode br1 = new BarangNode(brg1, null);
         listTransaksi.getListBarang().add(br1);
@@ -40,7 +40,8 @@ public class TransaksiMain { //deklarasi class TransaksiMain
         TransaksiNode t4 = new TransaksiNode(tb4, null);
         listTransaksi.add(t4);
         
-     ListTransaksi hasil = listTransaksi.getSumOfNumbersOfDistinctData();
+     ListTransaksi hasil = listTransaksi.getSumOfNumbersOfDistinctData(); 
+     //objek hasil berisi listTransaksi dengan method getSumOfNumbersOfDistinctData()
      
      //cetak tabel transaksi barang
         System.out.println("\n============== Tabel Transaksi Barang ==============\n");
@@ -69,7 +70,7 @@ public class TransaksiMain { //deklarasi class TransaksiMain
         
         //cetak total transaksi
         System.out.println("-------------------------------------------------------------------------");
-        System.out.println("Total Transaksi: Rp." + listTransaksi.getTotalTransaksi());
+        System.out.println("Total Transaksi: Rp." + listTransaksi.getTotalTransaksi()); //cetak total transaksi
         System.out.println();
-    }
+    } //akhir method pprogram
 } //akhir dari class TransaksiMain
