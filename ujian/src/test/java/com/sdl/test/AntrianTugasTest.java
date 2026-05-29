@@ -7,6 +7,7 @@ package com.sdl.test;
 
 import com.sdl.ujian.AntrianTugas;
 import com.sdl.ujian.Tugas;
+import com.sdl.ujian.TugasNode;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
@@ -28,7 +29,7 @@ public class AntrianTugasTest {
     public void test1(){
         AntrianTugas antrian = new AntrianTugas();
         antrian.buatAntrianBaru();
-        int noAntrian = antrian.getNoAntrianTerakhir();
+        int noAntrian = antrian.getNoAntrian();
         assertEquals(1,noAntrian);
     }
     
@@ -39,7 +40,7 @@ public class AntrianTugasTest {
         antrian.buatAntrianBaru();
         antrian.buatAntrianBaru();
         
-        int noAntrian = antrian.getNoAntrianTerakhir();
+        int noAntrian = antrian.getNoAntrian();
         assertEquals(3,noAntrian);
     }
     
@@ -50,7 +51,7 @@ public class AntrianTugasTest {
         antrian.buatAntrianBaru();
         antrian.buatAntrianBaru();
         
-        int noAntrian = antrian.getNoAntrianTerakhir();
+        int noAntrian = antrian.getNoAntrian();
         assertEquals(3,noAntrian);
         
         antrian.updateStatusTugas(1,"T1",1);
@@ -67,9 +68,9 @@ public class AntrianTugasTest {
         antrian.buatAntrianBaru();
         antrian.buatAntrianBaru();
         
-        int noAntrian = antrian.getNoAntrianTerakhir();
+        int noAntrian = antrian.getNoAntrian();
         assertEquals(3,noAntrian);
-        
+       
         antrian.updateStatusTugas(1,"T1",2);
         TugasNode node = antrian.getFirst();
         Tugas tugas = node.getData();
@@ -84,7 +85,7 @@ public class AntrianTugasTest {
         antrian.buatAntrianBaru();
         antrian.buatAntrianBaru();
         
-        int noAntrian = antrian.getNoAntrianTerakhir();
+        int noAntrian = antrian.getNoAntrian();
         assertEquals(3,noAntrian);
         
         antrian.updateStatusTugas(1,"T1",2);
@@ -96,8 +97,8 @@ public class AntrianTugasTest {
         AntrianTugas antrian1 = antrian.cariAntrian();
         TugasNode node1 = antrian1.getFirst();
         Tugas tugas1 = node1.getData();
-        int status = tugas1.getStatus();
-        int noAntrian = tugas1.getNoAntrian();
+        status = tugas1.getStatus();
+        noAntrian = tugas1.getNoAntrian();
         assertEquals(0,status);
         assertEquals(2,noAntrian);
     }
@@ -109,7 +110,7 @@ public class AntrianTugasTest {
         antrian.buatAntrianBaru();
         antrian.buatAntrianBaru();
         
-        int noAntrian = antrian.getNoAntrianTerakhir();
+        int noAntrian = antrian.getNoAntrian();
         assertEquals(3,noAntrian);
         
         antrian.updateStatusTugas(1,"T1",2);
@@ -121,8 +122,8 @@ public class AntrianTugasTest {
         AntrianTugas antrian1 = antrian.cariAntrian();
         TugasNode node1 = antrian1.getLast();
         Tugas tugas1 = node1.getData();
-        int status = tugas1.getStatus();
-        int noAntrian = tugas1.getNoAntrian();
+        status = tugas1.getStatus();
+        noAntrian = tugas1.getNoAntrian();
         assertEquals(0,status);
         assertEquals(3,noAntrian);
     }
