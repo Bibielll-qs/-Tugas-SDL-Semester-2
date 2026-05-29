@@ -1,56 +1,73 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package com.sdl.ujian;
+package com.sdl.ujian; //menyimpan file ke package com.sdl.ujian
 
-/**
- *
- * @author puspa
- */
-public class AntrianTugas {
-    private TugasNode first;
-    private TugasNode last;
-    private int noAntrian;
-
+public class AntrianTugas { //deklarasi class AntrianTugas
+    private TugasNode first; //atribut private first bertipe TugasNode
+    private TugasNode last; //atrbibut private last bertipe TugasNode
+    private int noAntrian; //atribut private noAntrian bertipe integer
+    /**
+     * method constructor default
+     */
     public AntrianTugas() {
         this.first = null;
         this.last = null;
         this.noAntrian = 0;
     }
-    
-    
+    /**
+     * method constructor berparameter
+     * @param first
+     * @param last
+     * @param noAntrian 
+     */
     public AntrianTugas(TugasNode first, TugasNode last, int noAntrian) {
         this.first = null;
         this.last = null;
         this.noAntrian = 0;
     }
-
+    /**
+     * method getter first
+     * @return 
+     */
     public TugasNode getFirst() {
         return first;
     }
-
+    /**
+     * method setter
+     * @param first 
+     */
     public void setFirst(TugasNode first) {
         this.first = first;
     }
-
+    /**
+     * method getter last
+     * @return 
+     */
     public TugasNode getLast() {
         return last;
     }
-
+    /**
+     * method setter
+     * @param last 
+     */
     public void setLast(TugasNode last) {
         this.last = last;
     }
-
+    /**
+     * method getter noAntrian
+     * @return 
+     */
     public int getNoAntrian() {
         return noAntrian;
     }
-
+    /**
+     * method setter
+     * @param noAntrian 
+     */
     public void setNoAntrian(int noAntrian) {
         this.noAntrian = noAntrian;
     }
-    
+    /**
+     * fungsi membuat antrian baru, otomatis menambah noAntrian
+     */
     public void buatAntrianBaru(){
         noAntrian++;
         Tugas tugas = new Tugas(noAntrian);
@@ -64,7 +81,10 @@ public class AntrianTugas {
             last = node;
         }
     }
-    
+    /**
+     * fungsi memasukkan data tugas di akhir
+     * @param tugas 
+     */
     public void addLast(Tugas tugas){
         TugasNode node = new TugasNode(tugas);
         if (isEmpty()) {
@@ -75,7 +95,10 @@ public class AntrianTugas {
             last = node;
         }
     }
-    
+    /**
+     * fungsi menghapus data tugas 
+     * @return 
+     */
     public TugasNode delete(){
          //isi senarai baru satu
         if (!isEmpty()) {
@@ -99,14 +122,22 @@ public class AntrianTugas {
             return null;
         }
     }
-    
+    /**
+     * fungsi cek isi antrian kosong
+     * @return 
+     */
     public boolean isEmpty(){
         if ((this.first == null) && (this.last == null))
             return true;
         else 
             return false;
     }
-    
+    /**
+     * fungsi 
+     * @param noAntrian
+     * @param namaTugas
+     * @param status 
+     */
     public void updateStatusTugas(int noAntrian, String namaTugas, int status) {
        TugasNode current = first;
         while (current != null) {
@@ -141,4 +172,4 @@ public class AntrianTugas {
         }
         return hasil;
     }
-}
+} //akhir dari class AntrianTugas

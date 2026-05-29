@@ -3,123 +3,126 @@ package com.sdl.test; //menyimpan file ke package com.sdl.test
 import com.sdl.ujian.AntrianTugas; //import isi dari class AntrianTugas
 import com.sdl.ujian.Tugas; //import isi dari class Tugas
 import com.sdl.ujian.TugasNode; //import isi dari class TugasNode
-import org.junit.jupiter.api.BeforeEach; //
-import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.BeforeEach; //mengimport annotation @BeforeEach dari JUnit5
+import org.junit.jupiter.api.Test; //mengimport annotation @Test dari JUnit5 untuk menandai metode sebagai unit test
+import static org.junit.jupiter.api.Assertions.*; //mengimport kemampuan dari kelas metode sebagai unit test
 
-/**
- *
- * @author puspa
- */
-public class AntrianTugasTest {
-    
+
+public class AntrianTugasTest { //deklarasi class AntrianTugasTest
+    /**
+     * method constructor default
+     */
     public AntrianTugasTest() {
     }
     
-    @BeforeEach
+    @BeforeEach //anotasi dalam JUnit5, menandai sebuah metode dijalankan sebelum setiap metode pengujian
     public void setUp() {
     }
     
-    @Test
-    public void test1(){
-        AntrianTugas antrian = new AntrianTugas();
-        antrian.buatAntrianBaru();
-        int noAntrian = antrian.getNoAntrian();
-        assertEquals(1,noAntrian);
+    @Test //metode untuk mengetes program pada file
+    public void test1(){ //method test1
+        AntrianTugas antrian = new AntrianTugas(); //buat antrian pada AntrianTugas
+        antrian.buatAntrianBaru(); //membuat antrian baru pada AntrianTugas
+        int noAntrian = antrian.getNoAntrian(); //menyimpan data nomor antrian pada antrian
+        assertEquals(1,noAntrian); //mengecek apakah noAntrian berisi 1 antrian baru
     }
     
-    @Test
-    public void test2(){
-        AntrianTugas antrian = new AntrianTugas();
+    @Test //metode untuk mengetes program pada file
+    public void test2(){ //method test2
+        AntrianTugas antrian = new AntrianTugas(); //buat antrian pada AntrianTugas
+        //membuat antrian baru pada AntrianTugas sebanyak 3 antrian
         antrian.buatAntrianBaru();
         antrian.buatAntrianBaru();
         antrian.buatAntrianBaru();
         
-        int noAntrian = antrian.getNoAntrian();
-        assertEquals(3,noAntrian);
+        int noAntrian = antrian.getNoAntrian(); //menyimpan data nomor antrian pada antrian
+        assertEquals(3,noAntrian); //mengecek apakah noAntrian berisi 3 antrian baru
     }
     
-    @Test
-    public void test3(){
-        AntrianTugas antrian = new AntrianTugas();
+    @Test //metode untuk mengetes program pada file
+    public void test3(){ //method test3
+        AntrianTugas antrian = new AntrianTugas(); //buat antrian pada AntrianTugas
+        //membuat antrian baru pada AntrianTugas sebanyak 3 antrian
         antrian.buatAntrianBaru();
         antrian.buatAntrianBaru();
         antrian.buatAntrianBaru();
         
-        int noAntrian = antrian.getNoAntrian();
-        assertEquals(3,noAntrian);
+        int noAntrian = antrian.getNoAntrian(); //menyimpan data nomor antrian pada antrian
+        assertEquals(3,noAntrian); //mengecek apakah noAntrian berisi 3 antrian baru
         
-        antrian.updateStatusTugas(1,"T1",1);
-        TugasNode node = antrian.getFirst();
-        Tugas tugas = node.getData();
-        int status = tugas.getStatus();
-        assertEquals(1,status);
+        antrian.updateStatusTugas(1,"T1",1); //mengupdate status pada antrian dengan isi argument dengan method updateStatusTugas()
+        TugasNode node = antrian.getFirst(); //objek node berisi data pertama pada antrian
+        Tugas tugas = node.getData(); //objek tugas berisi data node
+        int status = tugas.getStatus(); //variabel status berisi status pada objek tugas, berisi argument antrian
+        assertEquals(1,status); //mengecek apakah status bernilai 1
     }
     
-    @Test
-    public void test4(){
-        AntrianTugas antrian = new AntrianTugas();
+    @Test //metode untuk mengetes program pada file
+    public void test4(){ //method test4
+        AntrianTugas antrian = new AntrianTugas(); //buat antrian pada AntrianTugas
+        //membuat antrian baru pada AntrianTugas sebanyak 3 antrian
         antrian.buatAntrianBaru();
         antrian.buatAntrianBaru();
         antrian.buatAntrianBaru();
         
-        int noAntrian = antrian.getNoAntrian();
-        assertEquals(3,noAntrian);
+        int noAntrian = antrian.getNoAntrian(); //menyimpan data nomor antrian pada antrian
+        assertEquals(3,noAntrian); //mengecek apakah noAntrian berisi 3 antrian baru
        
-        antrian.updateStatusTugas(1,"T1",2);
-        TugasNode node = antrian.getFirst();
-        Tugas tugas = node.getData();
-        int status = tugas.getStatus();
-        assertEquals(2,status);
+        antrian.updateStatusTugas(1,"T1",2); //mengupdate status pada antrian dengan isi argument dengan method updateStatusTugas()
+        TugasNode node = antrian.getFirst(); //objek node berisi data pertama pada antrian
+        Tugas tugas = node.getData(); //objek tugas berisi data node
+        int status = tugas.getStatus(); //variabel status berisi status pada objek tugas, berisi argument antrian
+        assertEquals(2,status); //mengecek apakah status bernilai 2
     }
     
-    @Test
-    public void test5(){
+    @Test //metode untuk mengetes program pada file
+    public void test5(){ //method test5
+        AntrianTugas antrian = new AntrianTugas(); //buat antrian pada AntrianTugas
+        //membuat antrian baru pada AntrianTugas sebanyak 3 antrian
+        antrian.buatAntrianBaru();
+        antrian.buatAntrianBaru();
+        antrian.buatAntrianBaru();
+        
+        int noAntrian = antrian.getNoAntrian(); //menyimpan data nomor antrian pada antrian
+        assertEquals(3,noAntrian); //mengecek apakah noAntrian berisi 3 antrian baru
+        
+        antrian.updateStatusTugas(1,"T1",2); //mengupdate status pada antrian dengan isi argument dengan method updateStatusTugas()
+        TugasNode node = antrian.getFirst(); //objek node berisi data pertama pada antrian
+        Tugas tugas = node.getData(); //objek tugas berisi data node
+        int status = tugas.getStatus(); //variabel status berisi status pada objek tugas, berisi argument antrian
+        assertEquals(2,status); //mengecek apakah status bernilai 2
+        
+        AntrianTugas antrian1 = antrian.cariAntrian(); //membuat antrian1 untuk mencari antrian dengan method cariAntrian()
+        TugasNode node1 = antrian1.getFirst(); //objek node1 berisi data pertama pada antrian1
+        Tugas tugas1 = node1.getData(); //objek tugas1 berisi data node1
+        status = tugas1.getStatus(); //variabel status berisi status pada objek tugas1, berisi antrian
+        noAntrian = tugas1.getNoAntrian(); //objek noAntrian berisi nomor antrian tugas1
+        assertEquals(0,status); //mengecek apakah status bernilai 0
+        assertEquals(2,noAntrian); //mengecek apakah noAntrian bernilai 2
+    }
+    
+    @Test //metode untuk mengetes program pada file
+    public void test6(){ //method test6
         AntrianTugas antrian = new AntrianTugas();
         antrian.buatAntrianBaru();
         antrian.buatAntrianBaru();
         antrian.buatAntrianBaru();
         
-        int noAntrian = antrian.getNoAntrian();
+        int noAntrian = antrian.getNoAntrian(); //menyimpan data nomor antrian pada antrian
         assertEquals(3,noAntrian);
         
-        antrian.updateStatusTugas(1,"T1",2);
-        TugasNode node = antrian.getFirst();
-        Tugas tugas = node.getData();
-        int status = node.getStatus();
-        assertEquals(2,status);
+        antrian.updateStatusTugas(1,"T1",2); //mengupdate status pada antrian dengan isi argument dengan method updateStatusTugas()
+        TugasNode node = antrian.getFirst(); //objek node berisi data pertama pada antrian1
+        Tugas tugas = node.getData(); //objek tugas berisi data node
+        int status = node.getStatus(); //variabel status berisi status pada objek tugas, berisi argument antrian
+        assertEquals(2,status); //mengecek apakah status bernilai 2
         
-        AntrianTugas antrian1 = antrian.cariAntrian();
-        TugasNode node1 = antrian1.getFirst();
-        Tugas tugas1 = node1.getData();
-        status = tugas1.getStatus();
-        noAntrian = tugas1.getNoAntrian();
-        assertEquals(0,status);
-        assertEquals(2,noAntrian);
+        AntrianTugas antrian1 = antrian.cariAntrian(); //membuat antrian1 untuk mencari antrian dengan method cariAntrian()
+        TugasNode node1 = antrian1.getLast(); //objek node1 berisi data pertama pada antrian1
+        Tugas tugas1 = node1.getData(); //objek tugas1 berisi data node1
+        status = tugas1.getStatus(); //variabel status berisi status pada objek tugas1, berisi antrian
+        noAntrian = tugas1.getNoAntrian(); //objek noAntrian berisi nomor antrian tugas1
+        assertEquals(0,status); //mengecek apakah status bernilai 0AntrianTugasTest
+        assertEquals(3,noAntrian); //mengecek apakah noAntrian bernilai 3
     }
-    
-    @Test
-    public void test6(){
-        AntrianTugas antrian = new AntrianTugas();
-        antrian.buatAntrianBaru();
-        antrian.buatAntrianBaru();
-        antrian.buatAntrianBaru();
-        
-        int noAntrian = antrian.getNoAntrian();
-        assertEquals(3,noAntrian);
-        
-        antrian.updateStatusTugas(1,"T1",2);
-        TugasNode node = antrian.getFirst();
-        Tugas tugas = node.getData();
-        int status = node.getStatus();
-        assertEquals(2,status);
-        
-        AntrianTugas antrian1 = antrian.cariAntrian();
-        TugasNode node1 = antrian1.getLast();
-        Tugas tugas1 = node1.getData();
-        status = tugas1.getStatus();
-        noAntrian = tugas1.getNoAntrian();
-        assertEquals(0,status);
-        assertEquals(3,noAntrian);
-    }
-}
+} //akhir dari class AntrianTugasTest
