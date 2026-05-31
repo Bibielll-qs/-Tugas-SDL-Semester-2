@@ -172,4 +172,5 @@ public class AntrianTugas { //deklarasi class AntrianTugas
         }
         return hasil;
     }
+    
 } //akhir dari class AntrianTugas
