@@ -23,7 +23,7 @@ public class AntrianTugasTest { //deklarasi class AntrianTugasTest
     public void test1(){ //method test1
         AntrianTugas antrian = new AntrianTugas(); //buat antrian pada AntrianTugas
         antrian.buatAntrianBaru(); //membuat antrian baru pada AntrianTugas
-        int noAntrian = antrian.getNoAntrian(); //menyimpan data nomor antrian pada antrian
+        int noAntrian = antrian.getNoAntrian(); //menyimpan data nomor antrian pada noAntrian
         assertEquals(1,noAntrian); //mengecek apakah noAntrian berisi 1 antrian baru
     }
     
@@ -35,7 +35,7 @@ public class AntrianTugasTest { //deklarasi class AntrianTugasTest
         antrian.buatAntrianBaru();
         antrian.buatAntrianBaru();
         
-        int noAntrian = antrian.getNoAntrian(); //menyimpan data nomor antrian pada antrian
+        int noAntrian = antrian.getNoAntrian(); //menyimpan data nomor antrian pada noAntrian
         assertEquals(3,noAntrian); //mengecek apakah noAntrian berisi 3 antrian baru
     }
     
@@ -47,7 +47,7 @@ public class AntrianTugasTest { //deklarasi class AntrianTugasTest
         antrian.buatAntrianBaru();
         antrian.buatAntrianBaru();
         
-        int noAntrian = antrian.getNoAntrian(); //menyimpan data nomor antrian pada antrian
+        int noAntrian = antrian.getNoAntrian(); //menyimpan data nomor antrian pada noAntrian
         assertEquals(3,noAntrian); //mengecek apakah noAntrian berisi 3 antrian baru
         
         antrian.updateStatusTugas(1,"T1",1); //mengupdate status pada antrian dengan isi argument dengan method updateStatusTugas()
@@ -65,7 +65,7 @@ public class AntrianTugasTest { //deklarasi class AntrianTugasTest
         antrian.buatAntrianBaru();
         antrian.buatAntrianBaru();
         
-        int noAntrian = antrian.getNoAntrian(); //menyimpan data nomor antrian pada antrian
+        int noAntrian = antrian.getNoAntrian(); //menyimpan data nomor antrian pada noAntrian
         assertEquals(3,noAntrian); //mengecek apakah noAntrian berisi 3 antrian baru
        
         antrian.updateStatusTugas(1,"T1",2); //mengupdate status pada antrian dengan isi argument dengan method updateStatusTugas()
@@ -83,7 +83,7 @@ public class AntrianTugasTest { //deklarasi class AntrianTugasTest
         antrian.buatAntrianBaru();
         antrian.buatAntrianBaru();
         
-        int noAntrian = antrian.getNoAntrian(); //menyimpan data nomor antrian pada antrian
+        int noAntrian = antrian.getNoAntrian(); //menyimpan data nomor antrian pada noAntrian
         assertEquals(3,noAntrian); //mengecek apakah noAntrian berisi 3 antrian baru
         
         antrian.updateStatusTugas(1,"T1",2); //mengupdate status pada antrian dengan isi argument dengan method updateStatusTugas()
@@ -108,8 +108,8 @@ public class AntrianTugasTest { //deklarasi class AntrianTugasTest
         antrian.buatAntrianBaru();
         antrian.buatAntrianBaru();
         
-        int noAntrian = antrian.getNoAntrian(); //menyimpan data nomor antrian pada antrian
-        assertEquals(3,noAntrian);
+        int noAntrian = antrian.getNoAntrian(); //menyimpan data nomor antrian pada noAntrian
+        assertEquals(3,noAntrian); //mengecek apakah noAntrian berisi 3 antrian baru
         
         antrian.updateStatusTugas(1,"T1",2); //mengupdate status pada antrian dengan isi argument dengan method updateStatusTugas()
         TugasNode node = antrian.getFirst(); //objek node berisi data pertama pada antrian1
