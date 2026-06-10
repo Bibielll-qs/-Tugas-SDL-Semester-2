@@ -1,19 +1,11 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.sdl.akademik;
 
-/**
- *
- * @author puspa
- */
+
 public class KelasNode {
     private Kelas data;
     private KelasNode next;
 
-    public KelasNode(Kelas data, KelasNode next) {
+    public KelasNode(Kelas data) {
         this.data = data;
         this.next = null;
     }
@@ -32,7 +24,6 @@ public class KelasNode {
 
     public void setNext(KelasNode next) {
         this.next = next;
-    }
-    
+    }  
     
 }

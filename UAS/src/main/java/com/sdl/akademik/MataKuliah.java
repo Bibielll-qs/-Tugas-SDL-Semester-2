@@ -1,23 +1,18 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.sdl.akademik;
 
-/**
- *
- * @author puspa
- */
 public class MataKuliah {
     private String kodeMK;
     private String mataKuliah;
     private int sks;
-
+    
     public MataKuliah(String kodeMK, String mataKuliah, int sks) {
-        this.kodeMK = kodeMK;
+        this.kodeMK     = kodeMK;
         this.mataKuliah = mataKuliah;
-        this.sks = sks;
+        this.sks        = sks;
+    }
+
+    public MataKuliah(String kodeMK, String mataKuliah) {
+        this(kodeMK, mataKuliah, 0);
     }
 
     public String getKodeMK() {

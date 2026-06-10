@@ -1,11 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.sdl.test;
 
 import com.sdl.akademik.KelasList;
+import com.sdl.akademik.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
@@ -129,9 +125,9 @@ public class KelasListTest {
         assertEquals(2, hasil.getSize());
         
         KelasNode node = hasil.getFirst();
-        assertEquals("Agung H",node.getData().getDosen());
+        assertEquals("Agung H",node.getData().getNamaDosen());
         KelasNode node1 = hasil.getLast();
-        assertEquals("Pupaningtyas S. Adi",node.getData().getDosen());
+        assertEquals("Pupaningtyas S. Adi",node1.getData().getNamaDosen());
         
     }
 
@@ -158,7 +154,7 @@ public class KelasListTest {
         KelasNode node = hasil.getFirst();
         assertEquals("103B",node.getData().getKodeKelas());
         KelasNode node1 = hasil.getLast();
-        assertEquals("102A",node.getData().getKodeKelas());
+        assertEquals("102A",node1.getData().getKodeKelas());
         
     }
 }
